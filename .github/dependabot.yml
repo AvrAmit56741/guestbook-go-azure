@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "gomod"  # Go modules
+    directory: "/"  # Location of the package in the repository
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"  # Docker images
+    directory: "/"  # Location of the Dockerfile in the repository
+    schedule:
+      interval: "weekly"
