@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: [ 'javascript', 'python', 'css', 'dockerfile' ]
+        language: [ 'javascript', 'go', 'css', 'dockerfile' ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,12 +35,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Set up Go cache
+        if: matrix.language == 'go'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/go/pkg/mod
+            **/go.sum
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVASCRIPT: ${{ matrix.language == 'javascript' }}
-          VALIDATE_PYTHON: ${{ matrix.language == 'python' }}
+          VALIDATE_GO: ${{ matrix.language == 'go' }}
           VALIDATE_CSS: ${{ matrix.language == 'css' }}
           VALIDATE_DOCKER: ${{ matrix.language == 'dockerfile' }}
           DEFAULT_BRANCH: master
