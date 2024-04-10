@@ -1,29 +1,47 @@
-# This workflow executes several linters on changed files based on languages used in your code base whenever
-# you push a code or open a pull request.
-#
-# You can adjust the behavior by modifying this file.
-# For more information, see:
-# https://github.com/github/super-linter
 name: Lint Code Base
 
 on:
   push:
-    branches: [ "master" ]
+    branches: 
+      - master
+      - feature/*
+      - hotfix/*
   pull_request:
-    branches: [ "master" ]
+    branches: 
+      - master
+      - feature/*
+      - hotfix/*
+  workflow_dispatch:
+
 jobs:
   run-lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ 'javascript', 'python', 'css', 'dockerfile' ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
+
+      - name: Set up cache for Node modules
+        if: matrix.language == 'javascript'
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
-          VALIDATE_ALL_CODEBASE: true
-          DEFAULT_BRANCH: "master"
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_JAVASCRIPT: ${{ matrix.language == 'javascript' }}
+          VALIDATE_PYTHON: ${{ matrix.language == 'python' }}
+          VALIDATE_CSS: ${{ matrix.language == 'css' }}
+          VALIDATE_DOCKER: ${{ matrix.language == 'dockerfile' }}
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
