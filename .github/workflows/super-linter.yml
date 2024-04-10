@@ -27,8 +27,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: "master"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # OUTPUT_FOLDER: public
-          # OUTPUT_DETAILS: detailed
+
 # name: Lint Code Base
 
 # on:
