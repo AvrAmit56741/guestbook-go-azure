@@ -4,7 +4,7 @@
 # You can adjust the behavior by modifying this file.
 # For more information, see:
 # https://github.com/github/super-linter
-# name: Lint Code Base
+name: Lint Code Base
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: "master"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT_FOLDER: public
-          OUTPUT_DETAILS: detailed
+          # OUTPUT_FOLDER: public
+          # OUTPUT_DETAILS: detailed
 # name: Lint Code Base
 
 # on:
