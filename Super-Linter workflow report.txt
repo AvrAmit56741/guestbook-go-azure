@@ -1,0 +1,2044 @@
+﻿2024-04-11T15:32:15.3276108Z Current runner version: '2.315.0'
+2024-04-11T15:32:15.3299104Z ##[group]Operating System
+2024-04-11T15:32:15.3299747Z Ubuntu
+2024-04-11T15:32:15.3300057Z 22.04.4
+2024-04-11T15:32:15.3300524Z LTS
+2024-04-11T15:32:15.3300859Z ##[endgroup]
+2024-04-11T15:32:15.3301208Z ##[group]Runner Image
+2024-04-11T15:32:15.3301738Z Image: ubuntu-22.04
+2024-04-11T15:32:15.3302140Z Version: 20240407.1.0
+2024-04-11T15:32:15.3303093Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240407.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-04-11T15:32:15.3304626Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240407.1
+2024-04-11T15:32:15.3305480Z ##[endgroup]
+2024-04-11T15:32:15.3305898Z ##[group]Runner Image Provisioner
+2024-04-11T15:32:15.3306417Z 2.0.361.1
+2024-04-11T15:32:15.3306752Z ##[endgroup]
+2024-04-11T15:32:15.3307787Z ##[group]GITHUB_TOKEN Permissions
+2024-04-11T15:32:15.3309330Z Contents: read
+2024-04-11T15:32:15.3309773Z Metadata: read
+2024-04-11T15:32:15.3310422Z Packages: read
+2024-04-11T15:32:15.3310893Z ##[endgroup]
+2024-04-11T15:32:15.3314175Z Secret source: Actions
+2024-04-11T15:32:15.3314796Z Prepare workflow directory
+2024-04-11T15:32:15.3936534Z Prepare all required actions
+2024-04-11T15:32:15.4093595Z Getting action download info
+2024-04-11T15:32:15.5945603Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2024-04-11T15:32:15.7101510Z Download action repository 'actions/setup-go@v2' (SHA:bfdd3570ce990073878bf10f6b2d79082de49492)
+2024-04-11T15:32:16.0549421Z Download action repository 'github/super-linter@v4' (SHA:985ef206aaca4d560cb9ee2af2b42ba44adc1d55)
+2024-04-11T15:32:16.6195010Z Complete job name: run-lint
+2024-04-11T15:32:16.6857601Z ##[group]Pull down action image 'ghcr.io/github/super-linter:v4.10.0'
+2024-04-11T15:32:16.6948788Z ##[command]/usr/bin/docker pull ghcr.io/github/super-linter:v4.10.0
+2024-04-11T15:32:17.1848029Z v4.10.0: Pulling from github/super-linter
+2024-04-11T15:32:17.1848994Z c158987b0551: Pulling fs layer
+2024-04-11T15:32:17.1849656Z b225ab37e4b4: Pulling fs layer
+2024-04-11T15:32:17.1850313Z c88c80b6e377: Pulling fs layer
+2024-04-11T15:32:17.1850929Z 2e7ecbda2d78: Pulling fs layer
+2024-04-11T15:32:17.1851510Z a094d268b2a2: Pulling fs layer
+2024-04-11T15:32:17.1852120Z 2e7ecbda2d78: Waiting
+2024-04-11T15:32:17.1852683Z 439105f3f292: Pulling fs layer
+2024-04-11T15:32:17.1853264Z 8230ea6b5617: Pulling fs layer
+2024-04-11T15:32:17.1853911Z f2565199863c: Pulling fs layer
+2024-04-11T15:32:17.1854509Z aebf6746c5b4: Pulling fs layer
+2024-04-11T15:32:17.1855096Z a094d268b2a2: Waiting
+2024-04-11T15:32:17.1855571Z a09219d53d41: Pulling fs layer
+2024-04-11T15:32:17.1856116Z fced99825fe0: Pulling fs layer
+2024-04-11T15:32:17.1856518Z f2565199863c: Waiting
+2024-04-11T15:32:17.1856874Z 090edde53d4c: Pulling fs layer
+2024-04-11T15:32:17.1857239Z 700edc275bc9: Pulling fs layer
+2024-04-11T15:32:17.1857649Z 276cbf39bb76: Pulling fs layer
+2024-04-11T15:32:17.1858033Z aebf6746c5b4: Waiting
+2024-04-11T15:32:17.1858361Z 8230ea6b5617: Waiting
+2024-04-11T15:32:17.1858742Z 81e952a70a02: Pulling fs layer
+2024-04-11T15:32:17.1859124Z d8204cadd360: Pulling fs layer
+2024-04-11T15:32:17.1859496Z 18f2e4b66b5a: Pulling fs layer
+2024-04-11T15:32:17.1859882Z 769fd4b7e223: Pulling fs layer
+2024-04-11T15:32:17.1860257Z 0334da32ef7a: Pulling fs layer
+2024-04-11T15:32:17.1860606Z a09219d53d41: Waiting
+2024-04-11T15:32:17.1861003Z 94d062269ddf: Pulling fs layer
+2024-04-11T15:32:17.1861397Z 10cab8f62f02: Pulling fs layer
+2024-04-11T15:32:17.1861755Z fced99825fe0: Waiting
+2024-04-11T15:32:17.1862142Z b2d8104c3fa2: Pulling fs layer
+2024-04-11T15:32:17.1862503Z 0e48af19f2f8: Pulling fs layer
+2024-04-11T15:32:17.1862870Z 5e32222e29a7: Pulling fs layer
+2024-04-11T15:32:17.1863295Z 090edde53d4c: Waiting
+2024-04-11T15:32:17.1863823Z ce4d374719cb: Pulling fs layer
+2024-04-11T15:32:17.1864196Z ce2e2092ff93: Pulling fs layer
+2024-04-11T15:32:17.1864646Z f7a93ea6427c: Pulling fs layer
+2024-04-11T15:32:17.1864966Z 700edc275bc9: Waiting
+2024-04-11T15:32:17.1865672Z e6e31c11a945: Pulling fs layer
+2024-04-11T15:32:17.1866068Z 276cbf39bb76: Waiting
+2024-04-11T15:32:17.1866389Z 81e952a70a02: Waiting
+2024-04-11T15:32:17.1866731Z 94d062269ddf: Waiting
+2024-04-11T15:32:17.1867078Z 10cab8f62f02: Waiting
+2024-04-11T15:32:17.1867397Z d8204cadd360: Waiting
+2024-04-11T15:32:17.1867740Z 18f2e4b66b5a: Waiting
+2024-04-11T15:32:17.1868090Z 0e48af19f2f8: Waiting
+2024-04-11T15:32:17.1868405Z ce4d374719cb: Waiting
+2024-04-11T15:32:17.1868735Z 769fd4b7e223: Waiting
+2024-04-11T15:32:17.1869080Z 0334da32ef7a: Waiting
+2024-04-11T15:32:17.1869404Z 5e32222e29a7: Waiting
+2024-04-11T15:32:17.1869714Z ce2e2092ff93: Waiting
+2024-04-11T15:32:17.1870339Z e6e31c11a945: Waiting
+2024-04-11T15:32:17.1870694Z b2d8104c3fa2: Waiting
+2024-04-11T15:32:17.3456158Z b225ab37e4b4: Download complete
+2024-04-11T15:32:17.3565690Z c158987b0551: Verifying Checksum
+2024-04-11T15:32:17.3571519Z c158987b0551: Download complete
+2024-04-11T15:32:17.4869145Z 2e7ecbda2d78: Verifying Checksum
+2024-04-11T15:32:17.4870028Z 2e7ecbda2d78: Download complete
+2024-04-11T15:32:17.4870987Z c158987b0551: Pull complete
+2024-04-11T15:32:17.5607072Z b225ab37e4b4: Pull complete
+2024-04-11T15:32:17.6535100Z 439105f3f292: Verifying Checksum
+2024-04-11T15:32:17.6536243Z 439105f3f292: Download complete
+2024-04-11T15:32:17.7831849Z c88c80b6e377: Verifying Checksum
+2024-04-11T15:32:17.7832814Z c88c80b6e377: Download complete
+2024-04-11T15:32:17.9186535Z 8230ea6b5617: Download complete
+2024-04-11T15:32:17.9546725Z f2565199863c: Verifying Checksum
+2024-04-11T15:32:17.9553218Z f2565199863c: Download complete
+2024-04-11T15:32:18.0748360Z aebf6746c5b4: Verifying Checksum
+2024-04-11T15:32:18.0749644Z aebf6746c5b4: Download complete
+2024-04-11T15:32:18.4017628Z fced99825fe0: Verifying Checksum
+2024-04-11T15:32:18.4019271Z fced99825fe0: Download complete
+2024-04-11T15:32:18.6740700Z 090edde53d4c: Verifying Checksum
+2024-04-11T15:32:18.6748955Z 090edde53d4c: Download complete
+2024-04-11T15:32:18.8260000Z 700edc275bc9: Verifying Checksum
+2024-04-11T15:32:18.8261091Z 700edc275bc9: Download complete
+2024-04-11T15:32:18.9839125Z 276cbf39bb76: Verifying Checksum
+2024-04-11T15:32:18.9839929Z 276cbf39bb76: Download complete
+2024-04-11T15:32:19.5928140Z 81e952a70a02: Verifying Checksum
+2024-04-11T15:32:19.5931349Z 81e952a70a02: Download complete
+2024-04-11T15:32:19.8900448Z d8204cadd360: Verifying Checksum
+2024-04-11T15:32:19.8901267Z d8204cadd360: Download complete
+2024-04-11T15:32:20.1958865Z 18f2e4b66b5a: Verifying Checksum
+2024-04-11T15:32:20.1959693Z 18f2e4b66b5a: Download complete
+2024-04-11T15:32:21.0261335Z a094d268b2a2: Verifying Checksum
+2024-04-11T15:32:21.0262267Z a094d268b2a2: Download complete
+2024-04-11T15:32:21.1675896Z 0334da32ef7a: Verifying Checksum
+2024-04-11T15:32:21.1676955Z 0334da32ef7a: Download complete
+2024-04-11T15:32:21.2957493Z 94d062269ddf: Verifying Checksum
+2024-04-11T15:32:21.2959719Z 94d062269ddf: Download complete
+2024-04-11T15:32:21.5125920Z 769fd4b7e223: Verifying Checksum
+2024-04-11T15:32:21.5127169Z 769fd4b7e223: Download complete
+2024-04-11T15:32:21.6707462Z b2d8104c3fa2: Download complete
+2024-04-11T15:32:21.7971238Z 10cab8f62f02: Verifying Checksum
+2024-04-11T15:32:21.7972640Z 10cab8f62f02: Download complete
+2024-04-11T15:32:21.8405071Z 0e48af19f2f8: Verifying Checksum
+2024-04-11T15:32:21.8405773Z 0e48af19f2f8: Download complete
+2024-04-11T15:32:22.3936723Z a09219d53d41: Verifying Checksum
+2024-04-11T15:32:22.3937529Z a09219d53d41: Download complete
+2024-04-11T15:32:23.1499964Z ce2e2092ff93: Verifying Checksum
+2024-04-11T15:32:23.1501330Z ce2e2092ff93: Download complete
+2024-04-11T15:32:23.2882107Z f7a93ea6427c: Verifying Checksum
+2024-04-11T15:32:23.2883329Z f7a93ea6427c: Download complete
+2024-04-11T15:32:23.4196857Z e6e31c11a945: Verifying Checksum
+2024-04-11T15:32:23.4198316Z e6e31c11a945: Download complete
+2024-04-11T15:32:23.6158648Z 5e32222e29a7: Verifying Checksum
+2024-04-11T15:32:23.6159551Z 5e32222e29a7: Download complete
+2024-04-11T15:32:23.9309311Z ce4d374719cb: Verifying Checksum
+2024-04-11T15:32:23.9310411Z ce4d374719cb: Download complete
+2024-04-11T15:32:26.6308113Z c88c80b6e377: Pull complete
+2024-04-11T15:32:26.6809240Z 2e7ecbda2d78: Pull complete
+2024-04-11T15:32:34.9761774Z a094d268b2a2: Pull complete
+2024-04-11T15:32:35.0471802Z 439105f3f292: Pull complete
+2024-04-11T15:32:35.7195998Z 8230ea6b5617: Pull complete
+2024-04-11T15:32:36.1617054Z f2565199863c: Pull complete
+2024-04-11T15:32:36.2270218Z aebf6746c5b4: Pull complete
+2024-04-11T15:32:54.4866731Z a09219d53d41: Pull complete
+2024-04-11T15:32:55.8386613Z fced99825fe0: Pull complete
+2024-04-11T15:32:56.7161199Z 090edde53d4c: Pull complete
+2024-04-11T15:32:56.7963161Z 700edc275bc9: Pull complete
+2024-04-11T15:32:56.8138513Z 276cbf39bb76: Pull complete
+2024-04-11T15:33:05.1840762Z 81e952a70a02: Pull complete
+2024-04-11T15:33:05.6135113Z d8204cadd360: Pull complete
+2024-04-11T15:33:06.1286419Z 18f2e4b66b5a: Pull complete
+2024-04-11T15:33:17.9822952Z 769fd4b7e223: Pull complete
+2024-04-11T15:33:18.0000983Z 0334da32ef7a: Pull complete
+2024-04-11T15:33:18.0229435Z 94d062269ddf: Pull complete
+2024-04-11T15:33:19.0095772Z 10cab8f62f02: Pull complete
+2024-04-11T15:33:19.1843233Z b2d8104c3fa2: Pull complete
+2024-04-11T15:33:19.2281386Z 0e48af19f2f8: Pull complete
+2024-04-11T15:33:24.7922567Z 5e32222e29a7: Pull complete
+2024-04-11T15:33:42.7294105Z ce4d374719cb: Pull complete
+2024-04-11T15:33:46.5852344Z ce2e2092ff93: Pull complete
+2024-04-11T15:33:46.8538759Z f7a93ea6427c: Pull complete
+2024-04-11T15:33:46.8712363Z e6e31c11a945: Pull complete
+2024-04-11T15:33:46.8764029Z Digest: sha256:4e04df5a4f8fd76cd16dd17a07f015a33e5964ca07c48184fc1a163e10dd737b
+2024-04-11T15:33:46.8776411Z Status: Downloaded newer image for ghcr.io/github/super-linter:v4.10.0
+2024-04-11T15:33:46.8789083Z ghcr.io/github/super-linter:v4.10.0
+2024-04-11T15:33:46.8810975Z ##[endgroup]
+2024-04-11T15:33:46.9202709Z ##[group]Run actions/checkout@v3
+2024-04-11T15:33:46.9203155Z with:
+2024-04-11T15:33:46.9203510Z   fetch-depth: 0
+2024-04-11T15:33:46.9204031Z   repository: avramit5674/guestbook-go-azure
+2024-04-11T15:33:46.9204657Z   token: ***
+2024-04-11T15:33:46.9205036Z   ssh-strict: true
+2024-04-11T15:33:46.9205488Z   persist-credentials: true
+2024-04-11T15:33:46.9205851Z   clean: true
+2024-04-11T15:33:46.9206235Z   sparse-checkout-cone-mode: true
+2024-04-11T15:33:46.9206715Z   fetch-tags: false
+2024-04-11T15:33:46.9207032Z   lfs: false
+2024-04-11T15:33:46.9207393Z   submodules: false
+2024-04-11T15:33:46.9207820Z   set-safe-directory: true
+2024-04-11T15:33:46.9208166Z ##[endgroup]
+2024-04-11T15:33:47.1644025Z Syncing repository: avramit5674/guestbook-go-azure
+2024-04-11T15:33:47.1645804Z ##[group]Getting Git version info
+2024-04-11T15:33:47.1646575Z Working directory is '/home/runner/work/guestbook-go-azure/guestbook-go-azure'
+2024-04-11T15:33:47.1647589Z [command]/usr/bin/git version
+2024-04-11T15:33:47.1708778Z git version 2.43.2
+2024-04-11T15:33:47.1732410Z ##[endgroup]
+2024-04-11T15:33:47.1746249Z Temporarily overriding HOME='/home/runner/work/_temp/615fa516-c88d-46c0-af76-97f38e6f732e' before making global git config changes
+2024-04-11T15:33:47.1747943Z Adding repository directory to the temporary git global config as a safe directory
+2024-04-11T15:33:47.1751990Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/guestbook-go-azure/guestbook-go-azure
+2024-04-11T15:33:47.1795667Z Deleting the contents of '/home/runner/work/guestbook-go-azure/guestbook-go-azure'
+2024-04-11T15:33:47.1799661Z ##[group]Initializing the repository
+2024-04-11T15:33:47.1803157Z [command]/usr/bin/git init /home/runner/work/guestbook-go-azure/guestbook-go-azure
+2024-04-11T15:33:47.1895574Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-04-11T15:33:47.1896949Z hint: is subject to change. To configure the initial branch name to use in all
+2024-04-11T15:33:47.1898575Z hint: of your new repositories, which will suppress this warning, call:
+2024-04-11T15:33:47.1899507Z hint: 
+2024-04-11T15:33:47.1900215Z hint: 	git config --global init.defaultBranch <name>
+2024-04-11T15:33:47.1901301Z hint: 
+2024-04-11T15:33:47.1901878Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-04-11T15:33:47.1902733Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-04-11T15:33:47.1903437Z hint: 
+2024-04-11T15:33:47.1903933Z hint: 	git branch -m <name>
+2024-04-11T15:33:47.1909673Z Initialized empty Git repository in /home/runner/work/guestbook-go-azure/guestbook-go-azure/.git/
+2024-04-11T15:33:47.1919300Z [command]/usr/bin/git remote add origin https://github.com/avramit5674/guestbook-go-azure
+2024-04-11T15:33:47.1965133Z ##[endgroup]
+2024-04-11T15:33:47.1965892Z ##[group]Disabling automatic garbage collection
+2024-04-11T15:33:47.1968396Z [command]/usr/bin/git config --local gc.auto 0
+2024-04-11T15:33:47.2004140Z ##[endgroup]
+2024-04-11T15:33:47.2005030Z ##[group]Setting up auth
+2024-04-11T15:33:47.2010522Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-04-11T15:33:47.2050063Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-04-11T15:33:47.2435685Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-04-11T15:33:47.2472481Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-04-11T15:33:47.2718724Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-04-11T15:33:47.2764803Z ##[endgroup]
+2024-04-11T15:33:47.2765799Z ##[group]Fetching the repository
+2024-04-11T15:33:47.2775234Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --progress --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2024-04-11T15:33:47.5691158Z remote: Enumerating objects: 214, done.        
+2024-04-11T15:33:47.5694582Z remote: Counting objects:   0% (1/214)        
+2024-04-11T15:33:47.5695545Z remote: Counting objects:   1% (3/214)        
+2024-04-11T15:33:47.5696474Z remote: Counting objects:   2% (5/214)        
+2024-04-11T15:33:47.5698847Z remote: Counting objects:   3% (7/214)        
+2024-04-11T15:33:47.5700067Z remote: Counting objects:   4% (9/214)        
+2024-04-11T15:33:47.5702448Z remote: Counting objects:   5% (11/214)        
+2024-04-11T15:33:47.5703454Z remote: Counting objects:   6% (13/214)        
+2024-04-11T15:33:47.5704884Z remote: Counting objects:   7% (15/214)        
+2024-04-11T15:33:47.5705972Z remote: Counting objects:   8% (18/214)        
+2024-04-11T15:33:47.5707031Z remote: Counting objects:   9% (20/214)        
+2024-04-11T15:33:47.5708392Z remote: Counting objects:  10% (22/214)        
+2024-04-11T15:33:47.5709484Z remote: Counting objects:  11% (24/214)        
+2024-04-11T15:33:47.5710730Z remote: Counting objects:  12% (26/214)        
+2024-04-11T15:33:47.5711805Z remote: Counting objects:  13% (28/214)        
+2024-04-11T15:33:47.5712605Z remote: Counting objects:  14% (30/214)        
+2024-04-11T15:33:47.5713535Z remote: Counting objects:  15% (33/214)        
+2024-04-11T15:33:47.5714304Z remote: Counting objects:  16% (35/214)        
+2024-04-11T15:33:47.5715124Z remote: Counting objects:  17% (37/214)        
+2024-04-11T15:33:47.5716044Z remote: Counting objects:  18% (39/214)        
+2024-04-11T15:33:47.5716819Z remote: Counting objects:  19% (41/214)        
+2024-04-11T15:33:47.5717617Z remote: Counting objects:  20% (43/214)        
+2024-04-11T15:33:47.5718501Z remote: Counting objects:  21% (45/214)        
+2024-04-11T15:33:47.5718950Z remote: Counting objects:  22% (48/214)        
+2024-04-11T15:33:47.5719432Z remote: Counting objects:  23% (50/214)        
+2024-04-11T15:33:47.5719983Z remote: Counting objects:  24% (52/214)        
+2024-04-11T15:33:47.5720429Z remote: Counting objects:  25% (54/214)        
+2024-04-11T15:33:47.5721256Z remote: Counting objects:  26% (56/214)        
+2024-04-11T15:33:47.5721802Z remote: Counting objects:  27% (58/214)        
+2024-04-11T15:33:47.5722228Z remote: Counting objects:  28% (60/214)        
+2024-04-11T15:33:47.5722703Z remote: Counting objects:  29% (63/214)        
+2024-04-11T15:33:47.5723239Z remote: Counting objects:  30% (65/214)        
+2024-04-11T15:33:47.5723657Z remote: Counting objects:  31% (67/214)        
+2024-04-11T15:33:47.5724125Z remote: Counting objects:  32% (69/214)        
+2024-04-11T15:33:47.5724645Z remote: Counting objects:  33% (71/214)        
+2024-04-11T15:33:47.5725062Z remote: Counting objects:  34% (73/214)        
+2024-04-11T15:33:47.5725534Z remote: Counting objects:  35% (75/214)        
+2024-04-11T15:33:47.5726051Z remote: Counting objects:  36% (78/214)        
+2024-04-11T15:33:47.5726518Z remote: Counting objects:  37% (80/214)        
+2024-04-11T15:33:47.5726928Z remote: Counting objects:  38% (82/214)        
+2024-04-11T15:33:47.5727434Z remote: Counting objects:  39% (84/214)        
+2024-04-11T15:33:47.5727902Z remote: Counting objects:  40% (86/214)        
+2024-04-11T15:33:47.5728311Z remote: Counting objects:  41% (88/214)        
+2024-04-11T15:33:47.5728813Z remote: Counting objects:  42% (90/214)        
+2024-04-11T15:33:47.5729274Z remote: Counting objects:  43% (93/214)        
+2024-04-11T15:33:47.5729687Z remote: Counting objects:  44% (95/214)        
+2024-04-11T15:33:47.5730192Z remote: Counting objects:  45% (97/214)        
+2024-04-11T15:33:47.5730667Z remote: Counting objects:  46% (99/214)        
+2024-04-11T15:33:47.5731087Z remote: Counting objects:  47% (101/214)        
+2024-04-11T15:33:47.5731617Z remote: Counting objects:  48% (103/214)        
+2024-04-11T15:33:47.5732116Z remote: Counting objects:  49% (105/214)        
+2024-04-11T15:33:47.5732726Z remote: Counting objects:  50% (107/214)        
+2024-04-11T15:33:47.5733302Z remote: Counting objects:  51% (110/214)        
+2024-04-11T15:33:47.5733765Z remote: Counting objects:  52% (112/214)        
+2024-04-11T15:33:47.5734230Z remote: Counting objects:  53% (114/214)        
+2024-04-11T15:33:47.5734732Z remote: Counting objects:  54% (116/214)        
+2024-04-11T15:33:47.5735191Z remote: Counting objects:  55% (118/214)        
+2024-04-11T15:33:47.5735649Z remote: Counting objects:  56% (120/214)        
+2024-04-11T15:33:47.5736151Z remote: Counting objects:  57% (122/214)        
+2024-04-11T15:33:47.5736619Z remote: Counting objects:  58% (125/214)        
+2024-04-11T15:33:47.5737087Z remote: Counting objects:  59% (127/214)        
+2024-04-11T15:33:47.5737573Z remote: Counting objects:  60% (129/214)        
+2024-04-11T15:33:47.5738078Z remote: Counting objects:  61% (131/214)        
+2024-04-11T15:33:47.5738548Z remote: Counting objects:  62% (133/214)        
+2024-04-11T15:33:47.5739043Z remote: Counting objects:  63% (135/214)        
+2024-04-11T15:33:47.5739511Z remote: Counting objects:  64% (137/214)        
+2024-04-11T15:33:47.5739987Z remote: Counting objects:  65% (140/214)        
+2024-04-11T15:33:47.5740503Z remote: Counting objects:  66% (142/214)        
+2024-04-11T15:33:47.5853227Z remote: Counting objects:  67% (144/214)        
+2024-04-11T15:33:47.5854080Z remote: Counting objects:  68% (146/214)        
+2024-04-11T15:33:47.5855132Z remote: Counting objects:  69% (148/214)        
+2024-04-11T15:33:47.5856035Z remote: Counting objects:  70% (150/214)        
+2024-04-11T15:33:47.5856733Z remote: Counting objects:  71% (152/214)        
+2024-04-11T15:33:47.5857247Z remote: Counting objects:  72% (155/214)        
+2024-04-11T15:33:47.5857726Z remote: Counting objects:  73% (157/214)        
+2024-04-11T15:33:47.5858232Z remote: Counting objects:  74% (159/214)        
+2024-04-11T15:33:47.5858710Z remote: Counting objects:  75% (161/214)        
+2024-04-11T15:33:47.5859177Z remote: Counting objects:  76% (163/214)        
+2024-04-11T15:33:47.5859686Z remote: Counting objects:  77% (165/214)        
+2024-04-11T15:33:47.5860151Z remote: Counting objects:  78% (167/214)        
+2024-04-11T15:33:47.5860857Z remote: Counting objects:  79% (170/214)        
+2024-04-11T15:33:47.5861371Z remote: Counting objects:  80% (172/214)        
+2024-04-11T15:33:47.5861838Z remote: Counting objects:  81% (174/214)        
+2024-04-11T15:33:47.5862315Z remote: Counting objects:  82% (176/214)        
+2024-04-11T15:33:47.5862800Z remote: Counting objects:  83% (178/214)        
+2024-04-11T15:33:47.5863265Z remote: Counting objects:  84% (180/214)        
+2024-04-11T15:33:47.5863735Z remote: Counting objects:  85% (182/214)        
+2024-04-11T15:33:47.5864222Z remote: Counting objects:  86% (185/214)        
+2024-04-11T15:33:47.5864674Z remote: Counting objects:  87% (187/214)        
+2024-04-11T15:33:47.5865144Z remote: Counting objects:  88% (189/214)        
+2024-04-11T15:33:47.5865641Z remote: Counting objects:  89% (191/214)        
+2024-04-11T15:33:47.5866093Z remote: Counting objects:  90% (193/214)        
+2024-04-11T15:33:47.5866560Z remote: Counting objects:  91% (195/214)        
+2024-04-11T15:33:47.5867074Z remote: Counting objects:  92% (197/214)        
+2024-04-11T15:33:47.5867487Z remote: Counting objects:  93% (200/214)        
+2024-04-11T15:33:47.5867962Z remote: Counting objects:  94% (202/214)        
+2024-04-11T15:33:47.5868467Z remote: Counting objects:  95% (204/214)        
+2024-04-11T15:33:47.5868900Z remote: Counting objects:  96% (206/214)        
+2024-04-11T15:33:47.5869366Z remote: Counting objects:  97% (208/214)        
+2024-04-11T15:33:47.5869877Z remote: Counting objects:  98% (210/214)        
+2024-04-11T15:33:47.5870314Z remote: Counting objects:  99% (212/214)        
+2024-04-11T15:33:47.5870765Z remote: Counting objects: 100% (214/214)        
+2024-04-11T15:33:47.5871305Z remote: Counting objects: 100% (214/214), done.        
+2024-04-11T15:33:47.5871945Z remote: Compressing objects:   0% (1/198)        
+2024-04-11T15:33:47.5872441Z remote: Compressing objects:   1% (2/198)        
+2024-04-11T15:33:47.5872997Z remote: Compressing objects:   2% (4/198)        
+2024-04-11T15:33:47.5873431Z remote: Compressing objects:   3% (6/198)        
+2024-04-11T15:33:47.5873905Z remote: Compressing objects:   4% (8/198)        
+2024-04-11T15:33:47.5874502Z remote: Compressing objects:   5% (10/198)        
+2024-04-11T15:33:47.5874994Z remote: Compressing objects:   6% (12/198)        
+2024-04-11T15:33:47.5875443Z remote: Compressing objects:   7% (14/198)        
+2024-04-11T15:33:47.5876012Z remote: Compressing objects:   8% (16/198)        
+2024-04-11T15:33:47.5876497Z remote: Compressing objects:   9% (18/198)        
+2024-04-11T15:33:47.5876954Z remote: Compressing objects:  10% (20/198)        
+2024-04-11T15:33:47.5877520Z remote: Compressing objects:  11% (22/198)        
+2024-04-11T15:33:47.5878372Z remote: Compressing objects:  12% (24/198)        
+2024-04-11T15:33:47.5879071Z remote: Compressing objects:  13% (26/198)        
+2024-04-11T15:33:47.5879531Z remote: Compressing objects:  14% (28/198)        
+2024-04-11T15:33:47.5880009Z remote: Compressing objects:  15% (30/198)        
+2024-04-11T15:33:47.5880703Z remote: Compressing objects:  16% (32/198)        
+2024-04-11T15:33:47.5881150Z remote: Compressing objects:  17% (34/198)        
+2024-04-11T15:33:47.5881621Z remote: Compressing objects:  18% (36/198)        
+2024-04-11T15:33:47.5882178Z remote: Compressing objects:  19% (38/198)        
+2024-04-11T15:33:47.5882616Z remote: Compressing objects:  20% (40/198)        
+2024-04-11T15:33:47.5883083Z remote: Compressing objects:  21% (42/198)        
+2024-04-11T15:33:47.5883641Z remote: Compressing objects:  22% (44/198)        
+2024-04-11T15:33:47.5884078Z remote: Compressing objects:  23% (46/198)        
+2024-04-11T15:33:47.5884548Z remote: Compressing objects:  24% (48/198)        
+2024-04-11T15:33:47.5885089Z remote: Compressing objects:  25% (50/198)        
+2024-04-11T15:33:47.5885529Z remote: Compressing objects:  26% (52/198)        
+2024-04-11T15:33:47.5886015Z remote: Compressing objects:  27% (54/198)        
+2024-04-11T15:33:47.5886553Z remote: Compressing objects:  28% (56/198)        
+2024-04-11T15:33:47.5887186Z remote: Compressing objects:  29% (58/198)        
+2024-04-11T15:33:47.5887688Z remote: Compressing objects:  30% (60/198)        
+2024-04-11T15:33:47.5888224Z remote: Compressing objects:  31% (62/198)        
+2024-04-11T15:33:47.5888711Z remote: Compressing objects:  32% (64/198)        
+2024-04-11T15:33:47.5889151Z remote: Compressing objects:  33% (66/198)        
+2024-04-11T15:33:47.5889686Z remote: Compressing objects:  34% (68/198)        
+2024-04-11T15:33:47.5890169Z remote: Compressing objects:  35% (70/198)        
+2024-04-11T15:33:47.5890613Z remote: Compressing objects:  36% (72/198)        
+2024-04-11T15:33:47.5891143Z remote: Compressing objects:  37% (74/198)        
+2024-04-11T15:33:47.5891628Z remote: Compressing objects:  38% (76/198)        
+2024-04-11T15:33:47.5892067Z remote: Compressing objects:  39% (78/198)        
+2024-04-11T15:33:47.5892610Z remote: Compressing objects:  40% (80/198)        
+2024-04-11T15:33:47.5893092Z remote: Compressing objects:  41% (82/198)        
+2024-04-11T15:33:47.5893533Z remote: Compressing objects:  42% (84/198)        
+2024-04-11T15:33:47.5894060Z remote: Compressing objects:  43% (86/198)        
+2024-04-11T15:33:47.5894545Z remote: Compressing objects:  44% (88/198)        
+2024-04-11T15:33:47.5894977Z remote: Compressing objects:  45% (90/198)        
+2024-04-11T15:33:47.5895501Z remote: Compressing objects:  46% (92/198)        
+2024-04-11T15:33:47.5895985Z remote: Compressing objects:  47% (94/198)        
+2024-04-11T15:33:47.5896418Z remote: Compressing objects:  48% (96/198)        
+2024-04-11T15:33:47.5896963Z remote: Compressing objects:  49% (98/198)        
+2024-04-11T15:33:47.5897436Z remote: Compressing objects:  50% (99/198)        
+2024-04-11T15:33:47.5898025Z remote: Compressing objects:  51% (101/198)        
+2024-04-11T15:33:47.5898623Z remote: Compressing objects:  52% (103/198)        
+2024-04-11T15:33:47.5899112Z remote: Compressing objects:  53% (105/198)        
+2024-04-11T15:33:47.5899616Z remote: Compressing objects:  54% (107/198)        
+2024-04-11T15:33:47.5900130Z remote: Compressing objects:  55% (109/198)        
+2024-04-11T15:33:47.5900618Z remote: Compressing objects:  56% (111/198)        
+2024-04-11T15:33:47.5901112Z remote: Compressing objects:  57% (113/198)        
+2024-04-11T15:33:47.5901618Z remote: Compressing objects:  58% (115/198)        
+2024-04-11T15:33:47.5902091Z remote: Compressing objects:  59% (117/198)        
+2024-04-11T15:33:47.5902580Z remote: Compressing objects:  60% (119/198)        
+2024-04-11T15:33:47.5903079Z remote: Compressing objects:  61% (121/198)        
+2024-04-11T15:33:47.5903553Z remote: Compressing objects:  62% (123/198)        
+2024-04-11T15:33:47.5904052Z remote: Compressing objects:  63% (125/198)        
+2024-04-11T15:33:47.5904557Z remote: Compressing objects:  64% (127/198)        
+2024-04-11T15:33:47.5905026Z remote: Compressing objects:  65% (129/198)        
+2024-04-11T15:33:47.5905515Z remote: Compressing objects:  66% (131/198)        
+2024-04-11T15:33:47.5906016Z remote: Compressing objects:  67% (133/198)        
+2024-04-11T15:33:47.5906484Z remote: Compressing objects:  68% (135/198)        
+2024-04-11T15:33:47.5906969Z remote: Compressing objects:  69% (137/198)        
+2024-04-11T15:33:47.5907464Z remote: Compressing objects:  70% (139/198)        
+2024-04-11T15:33:47.5907967Z remote: Compressing objects:  71% (141/198)        
+2024-04-11T15:33:47.5908437Z remote: Compressing objects:  72% (143/198)        
+2024-04-11T15:33:47.5908984Z remote: Compressing objects:  73% (145/198)        
+2024-04-11T15:33:47.5909454Z remote: Compressing objects:  74% (147/198)        
+2024-04-11T15:33:47.5909946Z remote: Compressing objects:  75% (149/198)        
+2024-04-11T15:33:47.5910489Z remote: Compressing objects:  76% (151/198)        
+2024-04-11T15:33:47.5910957Z remote: Compressing objects:  77% (153/198)        
+2024-04-11T15:33:47.5911487Z remote: Compressing objects:  78% (155/198)        
+2024-04-11T15:33:47.5912271Z remote: Compressing objects:  79% (157/198)        
+2024-04-11T15:33:47.5913411Z remote: Compressing objects:  80% (159/198)        
+2024-04-11T15:33:47.5914397Z remote: Compressing objects:  81% (161/198)        
+2024-04-11T15:33:47.5915124Z remote: Compressing objects:  82% (163/198)        
+2024-04-11T15:33:47.5915591Z remote: Compressing objects:  83% (165/198)        
+2024-04-11T15:33:47.5916081Z remote: Compressing objects:  84% (167/198)        
+2024-04-11T15:33:47.5916650Z remote: Compressing objects:  85% (169/198)        
+2024-04-11T15:33:47.5917099Z remote: Compressing objects:  86% (171/198)        
+2024-04-11T15:33:47.5917588Z remote: Compressing objects:  87% (173/198)        
+2024-04-11T15:33:47.5918346Z remote: Compressing objects:  88% (175/198)        
+2024-04-11T15:33:47.5918844Z remote: Compressing objects:  89% (177/198)        
+2024-04-11T15:33:47.5919424Z remote: Compressing objects:  90% (179/198)        
+2024-04-11T15:33:47.5919880Z remote: Compressing objects:  91% (181/198)        
+2024-04-11T15:33:47.5920612Z remote: Compressing objects:  92% (183/198)        
+2024-04-11T15:33:47.5921521Z remote: Compressing objects:  93% (185/198)        
+2024-04-11T15:33:47.5922399Z remote: Compressing objects:  94% (187/198)        
+2024-04-11T15:33:47.5923180Z remote: Compressing objects:  95% (189/198)        
+2024-04-11T15:33:47.5924144Z remote: Compressing objects:  96% (191/198)        
+2024-04-11T15:33:47.5924785Z remote: Compressing objects:  97% (193/198)        
+2024-04-11T15:33:47.5925231Z remote: Compressing objects:  98% (195/198)        
+2024-04-11T15:33:47.5925849Z remote: Compressing objects:  99% (197/198)        
+2024-04-11T15:33:47.5926452Z remote: Compressing objects: 100% (198/198)        
+2024-04-11T15:33:47.5927084Z remote: Compressing objects: 100% (198/198), done.        
+2024-04-11T15:33:47.5958581Z Receiving objects:   0% (1/214)
+2024-04-11T15:33:47.5959407Z Receiving objects:   1% (3/214)
+2024-04-11T15:33:47.5960114Z Receiving objects:   2% (5/214)
+2024-04-11T15:33:47.5960922Z Receiving objects:   3% (7/214)
+2024-04-11T15:33:47.5961687Z Receiving objects:   4% (9/214)
+2024-04-11T15:33:47.5962400Z Receiving objects:   5% (11/214)
+2024-04-11T15:33:47.5963218Z Receiving objects:   6% (13/214)
+2024-04-11T15:33:47.5963669Z Receiving objects:   7% (15/214)
+2024-04-11T15:33:47.5964064Z Receiving objects:   8% (18/214)
+2024-04-11T15:33:47.5964479Z Receiving objects:   9% (20/214)
+2024-04-11T15:33:47.6076783Z Receiving objects:  10% (22/214)
+2024-04-11T15:33:47.6078341Z Receiving objects:  11% (24/214)
+2024-04-11T15:33:47.6079321Z Receiving objects:  12% (26/214)
+2024-04-11T15:33:47.6080147Z Receiving objects:  13% (28/214)
+2024-04-11T15:33:47.6080666Z Receiving objects:  14% (30/214)
+2024-04-11T15:33:47.6140003Z Receiving objects:  15% (33/214)
+2024-04-11T15:33:47.6140981Z Receiving objects:  16% (35/214)
+2024-04-11T15:33:47.6141972Z Receiving objects:  17% (37/214)
+2024-04-11T15:33:47.6143143Z Receiving objects:  18% (39/214)
+2024-04-11T15:33:47.6144825Z Receiving objects:  19% (41/214)
+2024-04-11T15:33:47.6145708Z Receiving objects:  20% (43/214)
+2024-04-11T15:33:47.6146736Z Receiving objects:  21% (45/214)
+2024-04-11T15:33:47.6147515Z Receiving objects:  22% (48/214)
+2024-04-11T15:33:47.6148190Z Receiving objects:  23% (50/214)
+2024-04-11T15:33:47.6148948Z Receiving objects:  24% (52/214)
+2024-04-11T15:33:47.6150376Z Receiving objects:  25% (54/214)
+2024-04-11T15:33:47.6151093Z Receiving objects:  26% (56/214)
+2024-04-11T15:33:47.6151615Z Receiving objects:  27% (58/214)
+2024-04-11T15:33:47.6151957Z Receiving objects:  28% (60/214)
+2024-04-11T15:33:47.6152872Z Receiving objects:  29% (63/214)
+2024-04-11T15:33:47.6154111Z Receiving objects:  30% (65/214)
+2024-04-11T15:33:47.6154853Z Receiving objects:  31% (67/214)
+2024-04-11T15:33:47.6155353Z Receiving objects:  32% (69/214)
+2024-04-11T15:33:47.6364885Z Receiving objects:  33% (71/214)
+2024-04-11T15:33:47.6366255Z Receiving objects:  34% (73/214)
+2024-04-11T15:33:47.6367425Z Receiving objects:  35% (75/214)
+2024-04-11T15:33:47.6371314Z Receiving objects:  36% (78/214)
+2024-04-11T15:33:47.6372370Z Receiving objects:  37% (80/214)
+2024-04-11T15:33:47.6373782Z remote: Total 214 (delta 105), reused 32 (delta 10), pack-reused 0        
+2024-04-11T15:33:47.6375181Z Receiving objects:  38% (82/214)
+2024-04-11T15:33:47.6375963Z Receiving objects:  39% (84/214)
+2024-04-11T15:33:47.6376824Z Receiving objects:  40% (86/214)
+2024-04-11T15:33:47.6377614Z Receiving objects:  41% (88/214)
+2024-04-11T15:33:47.6378448Z Receiving objects:  42% (90/214)
+2024-04-11T15:33:47.6379326Z Receiving objects:  43% (93/214)
+2024-04-11T15:33:47.6380087Z Receiving objects:  44% (95/214)
+2024-04-11T15:33:47.6380830Z Receiving objects:  45% (97/214)
+2024-04-11T15:33:47.6381682Z Receiving objects:  46% (99/214)
+2024-04-11T15:33:47.6382402Z Receiving objects:  47% (101/214)
+2024-04-11T15:33:47.6383132Z Receiving objects:  48% (103/214)
+2024-04-11T15:33:47.6383863Z Receiving objects:  49% (105/214)
+2024-04-11T15:33:47.6384557Z Receiving objects:  50% (107/214)
+2024-04-11T15:33:47.6385287Z Receiving objects:  51% (110/214)
+2024-04-11T15:33:47.6386016Z Receiving objects:  52% (112/214)
+2024-04-11T15:33:47.6386726Z Receiving objects:  53% (114/214)
+2024-04-11T15:33:47.6387409Z Receiving objects:  54% (116/214)
+2024-04-11T15:33:47.6388182Z Receiving objects:  55% (118/214)
+2024-04-11T15:33:47.6388802Z Receiving objects:  56% (120/214)
+2024-04-11T15:33:47.6389527Z Receiving objects:  57% (122/214)
+2024-04-11T15:33:47.6390369Z Receiving objects:  58% (125/214)
+2024-04-11T15:33:47.6391050Z Receiving objects:  59% (127/214)
+2024-04-11T15:33:47.6391749Z Receiving objects:  60% (129/214)
+2024-04-11T15:33:47.6392633Z Receiving objects:  61% (131/214)
+2024-04-11T15:33:47.6393337Z Receiving objects:  62% (133/214)
+2024-04-11T15:33:47.6394070Z Receiving objects:  63% (135/214)
+2024-04-11T15:33:47.6395260Z Receiving objects:  64% (137/214)
+2024-04-11T15:33:47.6395971Z Receiving objects:  65% (140/214)
+2024-04-11T15:33:47.6396700Z Receiving objects:  66% (142/214)
+2024-04-11T15:33:47.6397618Z Receiving objects:  67% (144/214)
+2024-04-11T15:33:47.6398667Z Receiving objects:  68% (146/214)
+2024-04-11T15:33:47.6399407Z Receiving objects:  69% (148/214)
+2024-04-11T15:33:47.6400307Z Receiving objects:  70% (150/214)
+2024-04-11T15:33:47.6400960Z Receiving objects:  71% (152/214)
+2024-04-11T15:33:47.6401786Z Receiving objects:  72% (155/214)
+2024-04-11T15:33:47.6405162Z Receiving objects:  73% (157/214)
+2024-04-11T15:33:47.6405570Z Receiving objects:  74% (159/214)
+2024-04-11T15:33:47.6406078Z Receiving objects:  75% (161/214)
+2024-04-11T15:33:47.6406496Z Receiving objects:  76% (163/214)
+2024-04-11T15:33:47.6406846Z Receiving objects:  77% (165/214)
+2024-04-11T15:33:47.6407334Z Receiving objects:  78% (167/214)
+2024-04-11T15:33:47.6407723Z Receiving objects:  79% (170/214)
+2024-04-11T15:33:47.6408079Z Receiving objects:  80% (172/214)
+2024-04-11T15:33:47.6408554Z Receiving objects:  81% (174/214)
+2024-04-11T15:33:47.6408945Z Receiving objects:  82% (176/214)
+2024-04-11T15:33:47.6409294Z Receiving objects:  83% (178/214)
+2024-04-11T15:33:47.6409926Z Receiving objects:  84% (180/214)
+2024-04-11T15:33:47.6410615Z Receiving objects:  85% (182/214)
+2024-04-11T15:33:47.6410990Z Receiving objects:  86% (185/214)
+2024-04-11T15:33:47.6411492Z Receiving objects:  87% (187/214)
+2024-04-11T15:33:47.6411880Z Receiving objects:  88% (189/214)
+2024-04-11T15:33:47.6412220Z Receiving objects:  89% (191/214)
+2024-04-11T15:33:47.6412703Z Receiving objects:  90% (193/214)
+2024-04-11T15:33:47.6413087Z Receiving objects:  91% (195/214)
+2024-04-11T15:33:47.6413428Z Receiving objects:  92% (197/214)
+2024-04-11T15:33:47.6413883Z Receiving objects:  93% (200/214)
+2024-04-11T15:33:47.6414261Z Receiving objects:  94% (202/214)
+2024-04-11T15:33:47.6414622Z Receiving objects:  95% (204/214)
+2024-04-11T15:33:47.6415058Z Receiving objects:  96% (206/214)
+2024-04-11T15:33:47.6415445Z Receiving objects:  97% (208/214)
+2024-04-11T15:33:47.6415800Z Receiving objects:  98% (210/214)
+2024-04-11T15:33:47.6416240Z Receiving objects:  99% (212/214)
+2024-04-11T15:33:47.6416875Z Receiving objects: 100% (214/214)
+2024-04-11T15:33:47.6417494Z Receiving objects: 100% (214/214), 98.73 KiB | 2.30 MiB/s, done.
+2024-04-11T15:33:47.6418160Z Resolving deltas:   0% (0/105)
+2024-04-11T15:33:47.6418565Z Resolving deltas:   1% (2/105)
+2024-04-11T15:33:47.6418940Z Resolving deltas:   2% (3/105)
+2024-04-11T15:33:47.6419345Z Resolving deltas:   3% (4/105)
+2024-04-11T15:33:47.6419740Z Resolving deltas:   4% (5/105)
+2024-04-11T15:33:47.6420273Z Resolving deltas:   5% (6/105)
+2024-04-11T15:33:47.6420837Z Resolving deltas:   6% (7/105)
+2024-04-11T15:33:47.6421242Z Resolving deltas:   7% (8/105)
+2024-04-11T15:33:47.6421649Z Resolving deltas:   8% (9/105)
+2024-04-11T15:33:47.6422201Z Resolving deltas:   9% (10/105)
+2024-04-11T15:33:47.6422768Z Resolving deltas:  10% (11/105)
+2024-04-11T15:33:47.6423297Z Resolving deltas:  11% (12/105)
+2024-04-11T15:33:47.6423755Z Resolving deltas:  12% (13/105)
+2024-04-11T15:33:47.6424161Z Resolving deltas:  13% (14/105)
+2024-04-11T15:33:47.6424686Z Resolving deltas:  14% (15/105)
+2024-04-11T15:33:47.6425213Z Resolving deltas:  15% (16/105)
+2024-04-11T15:33:47.6425625Z Resolving deltas:  16% (17/105)
+2024-04-11T15:33:47.6426010Z Resolving deltas:  17% (18/105)
+2024-04-11T15:33:47.6426438Z Resolving deltas:  18% (19/105)
+2024-04-11T15:33:47.6426817Z Resolving deltas:  19% (20/105)
+2024-04-11T15:33:47.6427186Z Resolving deltas:  20% (21/105)
+2024-04-11T15:33:47.6427644Z Resolving deltas:  21% (23/105)
+2024-04-11T15:33:47.6428216Z Resolving deltas:  22% (24/105)
+2024-04-11T15:33:47.6428606Z Resolving deltas:  23% (25/105)
+2024-04-11T15:33:47.6429039Z Resolving deltas:  24% (26/105)
+2024-04-11T15:33:47.6429412Z Resolving deltas:  25% (27/105)
+2024-04-11T15:33:47.6429797Z Resolving deltas:  26% (28/105)
+2024-04-11T15:33:47.6430203Z Resolving deltas:  27% (29/105)
+2024-04-11T15:33:47.6431359Z Resolving deltas:  28% (30/105)
+2024-04-11T15:33:47.6431799Z Resolving deltas:  29% (31/105)
+2024-04-11T15:33:47.6432253Z Resolving deltas:  30% (32/105)
+2024-04-11T15:33:47.6432593Z Resolving deltas:  31% (33/105)
+2024-04-11T15:33:47.6432984Z Resolving deltas:  32% (34/105)
+2024-04-11T15:33:47.6433415Z Resolving deltas:  33% (35/105)
+2024-04-11T15:33:47.6433773Z Resolving deltas:  34% (36/105)
+2024-04-11T15:33:47.6434157Z Resolving deltas:  35% (37/105)
+2024-04-11T15:33:47.6434687Z Resolving deltas:  36% (38/105)
+2024-04-11T15:33:47.6435048Z Resolving deltas:  37% (39/105)
+2024-04-11T15:33:47.6435432Z Resolving deltas:  38% (40/105)
+2024-04-11T15:33:47.6436071Z Resolving deltas:  39% (41/105)
+2024-04-11T15:33:47.6436432Z Resolving deltas:  40% (42/105)
+2024-04-11T15:33:47.6436804Z Resolving deltas:  41% (44/105)
+2024-04-11T15:33:47.6437245Z Resolving deltas:  42% (45/105)
+2024-04-11T15:33:47.6437612Z Resolving deltas:  43% (46/105)
+2024-04-11T15:33:47.6438352Z Resolving deltas:  44% (47/105)
+2024-04-11T15:33:47.6439138Z Resolving deltas:  45% (48/105)
+2024-04-11T15:33:47.6439814Z Resolving deltas:  46% (49/105)
+2024-04-11T15:33:47.6440466Z Resolving deltas:  47% (50/105)
+2024-04-11T15:33:47.6441239Z Resolving deltas:  48% (51/105)
+2024-04-11T15:33:47.6441850Z Resolving deltas:  49% (52/105)
+2024-04-11T15:33:47.6442324Z Resolving deltas:  50% (53/105)
+2024-04-11T15:33:47.6442808Z Resolving deltas:  51% (54/105)
+2024-04-11T15:33:47.6443276Z Resolving deltas:  52% (55/105)
+2024-04-11T15:33:47.6443661Z Resolving deltas:  53% (56/105)
+2024-04-11T15:33:47.6444246Z Resolving deltas:  54% (57/105)
+2024-04-11T15:33:47.6444589Z Resolving deltas:  55% (58/105)
+2024-04-11T15:33:47.6444960Z Resolving deltas:  56% (59/105)
+2024-04-11T15:33:47.6445475Z Resolving deltas:  57% (60/105)
+2024-04-11T15:33:47.6446022Z Resolving deltas:  58% (61/105)
+2024-04-11T15:33:47.6446397Z Resolving deltas:  59% (62/105)
+2024-04-11T15:33:47.6446865Z Resolving deltas:  60% (63/105)
+2024-04-11T15:33:47.6447209Z Resolving deltas:  61% (65/105)
+2024-04-11T15:33:47.6447577Z Resolving deltas:  62% (66/105)
+2024-04-11T15:33:47.6448027Z Resolving deltas:  63% (67/105)
+2024-04-11T15:33:47.6448361Z Resolving deltas:  64% (68/105)
+2024-04-11T15:33:47.6448969Z Resolving deltas:  65% (69/105)
+2024-04-11T15:33:47.6449410Z Resolving deltas:  66% (70/105)
+2024-04-11T15:33:47.6449748Z Resolving deltas:  67% (71/105)
+2024-04-11T15:33:47.6450137Z Resolving deltas:  68% (72/105)
+2024-04-11T15:33:47.6450579Z Resolving deltas:  69% (73/105)
+2024-04-11T15:33:47.6450918Z Resolving deltas:  70% (74/105)
+2024-04-11T15:33:47.6451301Z Resolving deltas:  71% (75/105)
+2024-04-11T15:33:47.6451737Z Resolving deltas:  72% (76/105)
+2024-04-11T15:33:47.6452071Z Resolving deltas:  73% (77/105)
+2024-04-11T15:33:47.6452453Z Resolving deltas:  74% (78/105)
+2024-04-11T15:33:47.6452886Z Resolving deltas:  75% (79/105)
+2024-04-11T15:33:47.6453236Z Resolving deltas:  76% (80/105)
+2024-04-11T15:33:47.6453605Z Resolving deltas:  77% (81/105)
+2024-04-11T15:33:47.6454041Z Resolving deltas:  78% (82/105)
+2024-04-11T15:33:47.6454392Z Resolving deltas:  79% (83/105)
+2024-04-11T15:33:47.6454763Z Resolving deltas:  80% (84/105)
+2024-04-11T15:33:47.6455201Z Resolving deltas:  81% (86/105)
+2024-04-11T15:33:47.6455558Z Resolving deltas:  82% (87/105)
+2024-04-11T15:33:47.6455927Z Resolving deltas:  83% (88/105)
+2024-04-11T15:33:47.6456360Z Resolving deltas:  84% (89/105)
+2024-04-11T15:33:47.6456717Z Resolving deltas:  85% (90/105)
+2024-04-11T15:33:47.6457085Z Resolving deltas:  86% (91/105)
+2024-04-11T15:33:47.6457535Z Resolving deltas:  87% (92/105)
+2024-04-11T15:33:47.6457870Z Resolving deltas:  88% (93/105)
+2024-04-11T15:33:47.6458240Z Resolving deltas:  89% (94/105)
+2024-04-11T15:33:47.6458684Z Resolving deltas:  90% (95/105)
+2024-04-11T15:33:47.6459020Z Resolving deltas:  91% (96/105)
+2024-04-11T15:33:47.6459388Z Resolving deltas:  92% (97/105)
+2024-04-11T15:33:47.6459837Z Resolving deltas:  93% (98/105)
+2024-04-11T15:33:47.6460176Z Resolving deltas:  94% (99/105)
+2024-04-11T15:33:47.6460693Z Resolving deltas:  95% (100/105)
+2024-04-11T15:33:47.6461170Z Resolving deltas:  96% (101/105)
+2024-04-11T15:33:47.6461519Z Resolving deltas:  97% (102/105)
+2024-04-11T15:33:47.6461916Z Resolving deltas:  98% (103/105)
+2024-04-11T15:33:47.6462364Z Resolving deltas:  99% (104/105)
+2024-04-11T15:33:47.6462705Z Resolving deltas: 100% (105/105)
+2024-04-11T15:33:47.6463111Z Resolving deltas: 100% (105/105), done.
+2024-04-11T15:33:47.6504426Z From https://github.com/avramit5674/guestbook-go-azure
+2024-04-11T15:33:47.6506216Z  * [new branch]      dependabot/docker/golang-1.22.2 -> origin/dependabot/docker/golang-1.22.2
+2024-04-11T15:33:47.6507926Z  * [new branch]      master     -> origin/master
+2024-04-11T15:33:47.6546086Z [command]/usr/bin/git branch --list --remote origin/master
+2024-04-11T15:33:47.6580002Z   origin/master
+2024-04-11T15:33:47.6589789Z [command]/usr/bin/git rev-parse refs/remotes/origin/master
+2024-04-11T15:33:47.6619336Z dbbd7e2e8914517fc803c4169ae186dc807d85a9
+2024-04-11T15:33:47.6624108Z ##[endgroup]
+2024-04-11T15:33:47.6624778Z ##[group]Determining the checkout info
+2024-04-11T15:33:47.6625759Z ##[endgroup]
+2024-04-11T15:33:47.6626412Z ##[group]Checking out the ref
+2024-04-11T15:33:47.6629715Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2024-04-11T15:33:47.6692033Z Reset branch 'master'
+2024-04-11T15:33:47.6693329Z branch 'master' set up to track 'origin/master'.
+2024-04-11T15:33:47.6699789Z ##[endgroup]
+2024-04-11T15:33:47.6743569Z [command]/usr/bin/git log -1 --format='%H'
+2024-04-11T15:33:47.6773648Z 'dbbd7e2e8914517fc803c4169ae186dc807d85a9'
+2024-04-11T15:33:47.7030887Z ##[group]Run actions/setup-go@v2
+2024-04-11T15:33:47.7031445Z with:
+2024-04-11T15:33:47.7031751Z   go-version: 1.18
+2024-04-11T15:33:47.7032056Z   check-latest: false
+2024-04-11T15:33:47.7032549Z   stable: true
+2024-04-11T15:33:47.7033028Z   token: ***
+2024-04-11T15:33:47.7033303Z ##[endgroup]
+2024-04-11T15:33:47.7498620Z Setup go stable version spec 1.18
+2024-04-11T15:33:47.7548819Z Attempting to download 1.18...
+2024-04-11T15:33:48.2266719Z matching 1.18...
+2024-04-11T15:33:48.2306247Z Acquiring 1.18.10 from https://github.com/actions/go-versions/releases/download/1.18.10-3890634278/go-1.18.10-linux-x64.tar.gz
+2024-04-11T15:33:49.1109583Z Extracting Go...
+2024-04-11T15:33:49.1225462Z [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/4935a81d-e49e-4cd7-8bb2-af582a64fd3a -f /home/runner/work/_temp/de320c14-1c98-49f1-9210-13e48e322f64
+2024-04-11T15:33:51.8259528Z Successfully extracted go to /home/runner/work/_temp/4935a81d-e49e-4cd7-8bb2-af582a64fd3a
+2024-04-11T15:33:51.8260344Z Adding to the cache ...
+2024-04-11T15:33:55.7154342Z Successfully cached go to /opt/hostedtoolcache/go/1.18.10/x64
+2024-04-11T15:33:55.7158422Z Added go to the path
+2024-04-11T15:33:55.7252434Z Successfully setup go version 1.18
+2024-04-11T15:33:55.7328205Z go version go1.18.10 linux/amd64
+2024-04-11T15:33:55.7328646Z 
+2024-04-11T15:33:55.7329178Z ##[group]go env
+2024-04-11T15:33:55.8221254Z GO111MODULE=""
+2024-04-11T15:33:55.8221856Z GOARCH="amd64"
+2024-04-11T15:33:55.8222394Z GOBIN=""
+2024-04-11T15:33:55.8223296Z GOCACHE="/home/runner/.cache/go-build"
+2024-04-11T15:33:55.8224036Z GOENV="/home/runner/.config/go/env"
+2024-04-11T15:33:55.8224708Z GOEXE=""
+2024-04-11T15:33:55.8225119Z GOEXPERIMENT=""
+2024-04-11T15:33:55.8225442Z GOFLAGS=""
+2024-04-11T15:33:55.8225761Z GOHOSTARCH="amd64"
+2024-04-11T15:33:55.8226120Z GOHOSTOS="linux"
+2024-04-11T15:33:55.8226444Z GOINSECURE=""
+2024-04-11T15:33:55.8226803Z GOMODCACHE="/home/runner/go/pkg/mod"
+2024-04-11T15:33:55.8227239Z GONOPROXY=""
+2024-04-11T15:33:55.8227559Z GONOSUMDB=""
+2024-04-11T15:33:55.8227872Z GOOS="linux"
+2024-04-11T15:33:55.8228215Z GOPATH="/home/runner/go"
+2024-04-11T15:33:55.8228558Z GOPRIVATE=""
+2024-04-11T15:33:55.8228950Z GOPROXY="https://proxy.golang.org,direct"
+2024-04-11T15:33:55.8229472Z GOROOT="/opt/hostedtoolcache/go/1.18.10/x64"
+2024-04-11T15:33:55.8229910Z GOSUMDB="sum.golang.org"
+2024-04-11T15:33:55.8230270Z GOTMPDIR=""
+2024-04-11T15:33:55.8230750Z GOTOOLDIR="/opt/hostedtoolcache/go/1.18.10/x64/pkg/tool/linux_amd64"
+2024-04-11T15:33:55.8231280Z GOVCS=""
+2024-04-11T15:33:55.8231573Z GOVERSION="go1.18.10"
+2024-04-11T15:33:55.8231937Z GCCGO="gccgo"
+2024-04-11T15:33:55.8232254Z GOAMD64="v1"
+2024-04-11T15:33:55.8232549Z AR="ar"
+2024-04-11T15:33:55.8232855Z CC="gcc"
+2024-04-11T15:33:55.8233151Z CXX="g++"
+2024-04-11T15:33:55.8233439Z CGO_ENABLED="1"
+2024-04-11T15:33:55.8234033Z GOMOD="/home/runner/work/guestbook-go-azure/guestbook-go-azure/go.mod"
+2024-04-11T15:33:55.8234582Z GOWORK=""
+2024-04-11T15:33:55.8234917Z CGO_CFLAGS="-g -O2"
+2024-04-11T15:33:55.8235282Z CGO_CPPFLAGS=""
+2024-04-11T15:33:55.8235646Z CGO_CXXFLAGS="-g -O2"
+2024-04-11T15:33:55.8236005Z CGO_FFLAGS="-g -O2"
+2024-04-11T15:33:55.8236385Z CGO_LDFLAGS="-g -O2"
+2024-04-11T15:33:55.8236767Z PKG_CONFIG="pkg-config"
+2024-04-11T15:33:55.8237647Z GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build370362885=/tmp/go-build -gno-record-gcc-switches"
+2024-04-11T15:33:55.8238688Z 
+2024-04-11T15:33:55.8239191Z ##[endgroup]
+2024-04-11T15:33:55.8403921Z ##[group]Run go version
+2024-04-11T15:33:55.8404393Z [36;1mgo version[0m
+2024-04-11T15:33:55.8404893Z [36;1mgo mod download[0m
+2024-04-11T15:33:55.8474788Z shell: /usr/bin/bash -e {0}
+2024-04-11T15:33:55.8475325Z env:
+2024-04-11T15:33:55.8475703Z   GOROOT: /opt/hostedtoolcache/go/1.18.10/x64
+2024-04-11T15:33:55.8476118Z ##[endgroup]
+2024-04-11T15:33:55.8660534Z go version go1.18.10 linux/amd64
+2024-04-11T15:33:56.2454366Z ##[group]Run github/super-linter@v4
+2024-04-11T15:33:56.2454900Z env:
+2024-04-11T15:33:56.2455221Z   GOROOT: 
+2024-04-11T15:33:56.2455540Z   VALIDATE_ALL_CODEBASE: true
+2024-04-11T15:33:56.2455955Z   DEFAULT_BRANCH: master
+2024-04-11T15:33:56.2456560Z   GITHUB_TOKEN: ***
+2024-04-11T15:33:56.2456906Z   OUTPUT_FOLDER: public
+2024-04-11T15:33:56.2457294Z   OUTPUT_DETAILS: detailed
+2024-04-11T15:33:56.2457657Z ##[endgroup]
+2024-04-11T15:33:56.2666981Z ##[command]/usr/bin/docker run --name ghcriogithubsuperlinterv4100_8d9233 --label c50b7d --workdir /github/workspace --rm -e "GOROOT" -e "VALIDATE_ALL_CODEBASE" -e "DEFAULT_BRANCH" -e "GITHUB_TOKEN" -e "OUTPUT_FOLDER" -e "OUTPUT_DETAILS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/guestbook-go-azure/guestbook-go-azure":"/github/workspace" ghcr.io/github/super-linter:v4.10.0
+2024-04-11T15:33:57.8841473Z --------------------------------------------------------------------------------
+2024-04-11T15:33:57.8841980Z 
+2024-04-11T15:33:57.8842738Z                               /@@#///////@@/(@//@%/(@.@(       @@
+2024-04-11T15:33:57.8844225Z                           @@//////////////////////////////#*  @@@
+2024-04-11T15:33:57.8845532Z                         @////@//(///////////@@@@@///@//@/@**//@@(
+2024-04-11T15:33:57.8846772Z                       @///////@///////////////@@@@    (           @,
+2024-04-11T15:33:57.8848023Z                      @/(&/@////////////////////                     @
+2024-04-11T15:33:57.8848738Z                     @////////////////////////@@                      @
+2024-04-11T15:33:57.8849539Z                   @%////////(//////////%/////&@            @@       *,@           ______________
+2024-04-11T15:33:57.8850441Z              @@@@@/@/#/////(&//////////////////                       .@         /              \
+2024-04-11T15:33:57.8851277Z         *@@@@@.    .%///(//@//////////////////&.   .@@,                 @%      / Don't mind me  \
+2024-04-11T15:33:57.8852052Z       @@%           .&@&&/@.@//&/////(//////////    @@@@@@@@@         .. &@    / I'm just looking \
+2024-04-11T15:33:57.8852851Z     @@%               @@@@@   @&/////////////////#   @/       V  @@/ ,@@@ @   <  for some trash... |
+2024-04-11T15:33:57.8853469Z @@@%                   @@@@        .%@@@@//////#@ @   @@         @     .,.     \__________________/
+2024-04-11T15:33:57.8854301Z                                           @@@/@(  (@@@@% @/\      %
+2024-04-11T15:33:57.8855434Z                                            @@@@(    .     .@@/\   #
+2024-04-11T15:33:57.8857001Z                                              @                  %@%
+2024-04-11T15:33:57.8857526Z 
+2024-04-11T15:33:57.8858248Z --------------------------------------------------------------------------------
+2024-04-11T15:33:57.8874384Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   ---------------------------------------------[0m
+2024-04-11T15:33:57.8906001Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   --- GitHub Actions Multi Language Linter ----[0m
+2024-04-11T15:33:57.8938043Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m    - Image Creation Date:[2023-01-04T06:45:30Z][0m
+2024-04-11T15:33:57.8970520Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m    - Image Revision:[d2600eb1bd51e68b2c065501b241c450be01a216][0m
+2024-04-11T15:33:57.9002320Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m    - Image Version:[d2600eb1bd51e68b2c065501b241c450be01a216][0m
+2024-04-11T15:33:57.9033393Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   ---------------------------------------------[0m
+2024-04-11T15:33:57.9065138Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   ---------------------------------------------[0m
+2024-04-11T15:33:57.9098646Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   The Super-Linter source code can be found at:[0m
+2024-04-11T15:33:57.9129813Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m    - https://github.com/github/super-linter[0m
+2024-04-11T15:33:57.9162400Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   ---------------------------------------------[0m
+2024-04-11T15:33:57.9433221Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   --------------------------------------------[0m
+2024-04-11T15:33:57.9464390Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   Gathering GitHub information...[0m
+2024-04-11T15:33:57.9497973Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_SHA][0;34m, value:[0;37m[dbbd7e2e8914517fc803c4169ae186dc807d85a9][0m
+2024-04-11T15:33:57.9530102Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_WORKSPACE][0;34m, value:[0;37m[/github/workspace][0m
+2024-04-11T15:33:57.9563526Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_EVENT_PATH][0;34m, value:[0;37m[/github/workflow/event.json][0;34m[0m
+2024-04-11T15:33:57.9876430Z [0m2024-04-11 15:33:57 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_ORG][0;34m, value:[0;37m[avramit5674][0m
+2024-04-11T15:33:58.0189637Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_REPO][0;34m, value:[0;37m[guestbook-go-azure][0m
+2024-04-11T15:33:58.0221951Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_TOKEN][0m
+2024-04-11T15:33:58.0255640Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_REPOSITORY][0;34m, value:[0;37m[avramit5674/guestbook-go-azure][0m
+2024-04-11T15:33:58.0287380Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   Successfully found:[0;37m[GITHUB_RUN_ID][0;34m, value:[0;37m[8649355490][0m
+2024-04-11T15:33:58.0319795Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   --------------------------------------------[0m
+2024-04-11T15:33:58.0350037Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   Gathering user validation information...[0m
+2024-04-11T15:33:58.0382258Z [0m2024-04-11 15:33:58 [0;34m[INFO][0m   - Validating ALL files in code base...[0m
+2024-04-11T15:34:02.2999155Z [0m2024-04-11 15:34:02 [0;34m[INFO][0m   ---------------------------------[0m
+2024-04-11T15:34:02.3033093Z [0m2024-04-11 15:34:02 [0;34m[INFO][0m   ------ File list to check: ------[0m
+2024-04-11T15:34:02.3067994Z [0m2024-04-11 15:34:02 [0;34m[INFO][0m   ---------------------------------[0m
+2024-04-11T15:34:04.3737699Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:04.3771558Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   Successfully gathered list of files...[0m
+2024-04-11T15:34:04.7960969Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:04.7996278Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:04.8032329Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:04.8106177Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   Linting [CSS] files...[0m
+2024-04-11T15:34:04.8141968Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:04.8178045Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:04.8430535Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:04.8466785Z [0m2024-04-11 15:34:04 [0;34m[INFO][0m   File:[/github/workspace/public/style.css][0m
+2024-04-11T15:34:05.4707635Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Found errors in [stylelint] linter![0m
+2024-04-11T15:34:05.4747066Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Error code: 2. Command output:[0m
+2024-04-11T15:34:05.4748334Z ------
+2024-04-11T15:34:05.4748507Z 
+2024-04-11T15:34:05.4748644Z public/style.css
+2024-04-11T15:34:05.4751679Z   [2m1:5[22m   [31m[31m✖[39m  Expected newline after ","          [2mselector-list-comma-newline-after[22m
+2024-04-11T15:34:05.4752977Z  [2m13:3[22m   [31m[31m✖[39m  Expected newline after ","          [2mselector-list-comma-newline-after[22m
+2024-04-11T15:34:05.4754117Z  [2m13:7[22m   [31m[31m✖[39m  Expected newline after ","          [2mselector-list-comma-newline-after[22m
+2024-04-11T15:34:05.4755454Z  [2m13:10[22m  [31m[31m✖[39m  Expected newline after ","          [2mselector-list-comma-newline-after[22m
+2024-04-11T15:34:05.4756566Z  [2m13:17[22m  [31m[31m✖[39m  Expected newline after ","          [2mselector-list-comma-newline-after[22m
+2024-04-11T15:34:05.4757517Z  [2m19:10[22m  [31m[31m✖[39m  Expected "#BDB76B" to be "#bdb76b"  [2mcolor-hex-case[22m
+2024-04-11T15:34:05.4758863Z  [2m36:31[22m  [31m[31m✖[39m  Expected "#BDB76B" to be "#bdb76b"  [2mcolor-hex-case[22m
+2024-04-11T15:34:05.4759827Z  [2m41:12[22m  [31m[31m✖[39m  Expected a leading zero             [2mnumber-leading-zero[22m
+2024-04-11T15:34:05.4760748Z  [2m46:15[22m  [31m[31m✖[39m  Expected "#BDB76B" to be "#bdb76b"  [2mcolor-hex-case[22m
+2024-04-11T15:34:05.4761717Z  [2m49:10[22m  [31m[31m✖[39m  Expected "#FFF" to be "#fff"        [2mcolor-hex-case[22m
+2024-04-11T15:34:05.4762578Z  [2m52:12[22m  [31m[31m✖[39m  Expected a leading zero             [2mnumber-leading-zero[22m
+2024-04-11T15:34:05.4763089Z 
+2024-04-11T15:34:05.4763352Z 11 problems ([31m11 errors[39m, [33m0 warnings[39m)
+2024-04-11T15:34:05.4763913Z ------[0m
+2024-04-11T15:34:05.5539651Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:05.5576286Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.5613455Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.5688258Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   Linting [DOCKERFILE_HADOLINT] files...[0m
+2024-04-11T15:34:05.5724784Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.5759718Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.6047663Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:05.6081525Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   File:[/github/workspace/Dockerfile][0m
+2024-04-11T15:34:05.6663540Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Found errors in [hadolint] linter![0m
+2024-04-11T15:34:05.6699960Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:05.6701023Z ------
+2024-04-11T15:34:05.6701759Z /github/workspace/Dockerfile:20 DL3020 [1m[91merror[0m: Use COPY instead of ADD for files and folders
+2024-04-11T15:34:05.6703042Z /github/workspace/Dockerfile:25 DL3022 [1m[93mwarning[0m: `COPY --from` should reference a previously defined `FROM` alias
+2024-04-11T15:34:05.6703948Z ------[0m
+2024-04-11T15:34:05.7691519Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:05.7727525Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.7763176Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.7837866Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   Linting [GITHUB_ACTIONS] files...[0m
+2024-04-11T15:34:05.7874703Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.7910995Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:05.8164948Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:05.8200492Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/checkmarx-one.yml][0m
+2024-04-11T15:34:05.8271583Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m    - File:[0;37m[checkmarx-one.yml][0;34m was linted with [0;37m[actionlint][0;34m successfully[0m
+2024-04-11T15:34:05.8571687Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:05.8609826Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/snyk-security.yml][0m
+2024-04-11T15:34:05.8786491Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m    - File:[0;37m[snyk-security.yml][0;34m was linted with [0;37m[actionlint][0;34m successfully[0m
+2024-04-11T15:34:05.9074460Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:05.9109764Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/super-linter.yml][0m
+2024-04-11T15:34:05.9269072Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Found errors in [actionlint] linter![0m
+2024-04-11T15:34:05.9304906Z [0m2024-04-11 15:34:05 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:05.9305936Z ------
+2024-04-11T15:34:05.9307299Z .github/workflows/super-linter.yml:38:23: property "go" is not defined in object type {} [expression]
+2024-04-11T15:34:05.9308416Z    |
+2024-04-11T15:34:05.9308991Z 38 |           GOROOT: ${{ steps.go.outputs.goroot }} # Explicitly set GOROOT
+2024-04-11T15:34:05.9309699Z    |                       ^~~~~~~~~~~~~~~~~~~~~~~
+2024-04-11T15:34:05.9310166Z ------[0m
+2024-04-11T15:34:05.9593380Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:05.9629211Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/superlinter.yml][0m
+2024-04-11T15:34:05.9699469Z [0m2024-04-11 15:34:05 [0;34m[INFO][0m    - File:[0;37m[superlinter.yml][0;34m was linted with [0;37m[actionlint][0;34m successfully[0m
+2024-04-11T15:34:06.0128855Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:06.0164755Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:06.0198983Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:06.0272586Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   Linting [GITLEAKS] files...[0m
+2024-04-11T15:34:06.0307517Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:06.0343372Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:06.0595589Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.0630830Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/.golangci.yml][0m
+2024-04-11T15:34:06.0975456Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[.golangci.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.1012122Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.1013304Z ------
+2024-04-11T15:34:06.1013595Z 
+2024-04-11T15:34:06.1013862Z     ○
+2024-04-11T15:34:06.1014544Z     │╲
+2024-04-11T15:34:06.1015075Z     │ ○
+2024-04-11T15:34:06.1015621Z     ○ ░
+2024-04-11T15:34:06.1016481Z     ░    gitleaks
+2024-04-11T15:34:06.1016853Z 
+2024-04-11T15:34:06.1017154Z [90m3:34PM[0m [32mINF[0m scan completed in 9.19ms
+2024-04-11T15:34:06.1017738Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.1018258Z ------[0m
+2024-04-11T15:34:06.1295634Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.1333075Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/.lintr][0m
+2024-04-11T15:34:06.1661189Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[.lintr][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.1698499Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.1699781Z ------
+2024-04-11T15:34:06.1700073Z 
+2024-04-11T15:34:06.1700427Z     ○
+2024-04-11T15:34:06.1700947Z     │╲
+2024-04-11T15:34:06.1708852Z     │ ○
+2024-04-11T15:34:06.1711066Z     ○ ░
+2024-04-11T15:34:06.1711761Z     ░    gitleaks
+2024-04-11T15:34:06.1711958Z 
+2024-04-11T15:34:06.1712253Z [90m3:34PM[0m [32mINF[0m scan completed in 8.46ms
+2024-04-11T15:34:06.1712939Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.1713378Z ------[0m
+2024-04-11T15:34:06.1989772Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.2026888Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/dependabot.yml][0m
+2024-04-11T15:34:06.2369881Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[dependabot.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.2405952Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.2406657Z ------
+2024-04-11T15:34:06.2406954Z 
+2024-04-11T15:34:06.2407211Z     ○
+2024-04-11T15:34:06.2407884Z     │╲
+2024-04-11T15:34:06.2408377Z     │ ○
+2024-04-11T15:34:06.2408943Z     ○ ░
+2024-04-11T15:34:06.2409565Z     ░    gitleaks
+2024-04-11T15:34:06.2409919Z 
+2024-04-11T15:34:06.2410395Z [90m3:34PM[0m [32mINF[0m scan completed in 8.85ms
+2024-04-11T15:34:06.2411055Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.2411582Z ------[0m
+2024-04-11T15:34:06.2693579Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.2729003Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/checkmarx-one.yml][0m
+2024-04-11T15:34:06.3074463Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[checkmarx-one.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.3113082Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.3114068Z ------
+2024-04-11T15:34:06.3114372Z 
+2024-04-11T15:34:06.3114705Z     ○
+2024-04-11T15:34:06.3115115Z     │╲
+2024-04-11T15:34:06.3115447Z     │ ○
+2024-04-11T15:34:06.3115826Z     ○ ░
+2024-04-11T15:34:06.3116556Z     ░    gitleaks
+2024-04-11T15:34:06.3116865Z 
+2024-04-11T15:34:06.3117364Z [90m3:34PM[0m [32mINF[0m scan completed in 9.94ms
+2024-04-11T15:34:06.3118750Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.3119561Z ------[0m
+2024-04-11T15:34:06.3400679Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.3434341Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/snyk-security.yml][0m
+2024-04-11T15:34:06.3804588Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[snyk-security.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.3842047Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.3843174Z ------
+2024-04-11T15:34:06.3843437Z 
+2024-04-11T15:34:06.3843756Z     ○
+2024-04-11T15:34:06.3844311Z     │╲
+2024-04-11T15:34:06.3844991Z     │ ○
+2024-04-11T15:34:06.3845503Z     ○ ░
+2024-04-11T15:34:06.3846078Z     ░    gitleaks
+2024-04-11T15:34:06.3846381Z 
+2024-04-11T15:34:06.3846803Z [90m3:34PM[0m [32mINF[0m scan completed in 10.1ms
+2024-04-11T15:34:06.3847736Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.3848376Z ------[0m
+2024-04-11T15:34:06.4133795Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.4169618Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/super-linter.yml][0m
+2024-04-11T15:34:06.4504807Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[super-linter.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.4540656Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.4541294Z ------
+2024-04-11T15:34:06.4541448Z 
+2024-04-11T15:34:06.4541585Z     ○
+2024-04-11T15:34:06.4542360Z     │╲
+2024-04-11T15:34:06.4542699Z     │ ○
+2024-04-11T15:34:06.4542969Z     ○ ░
+2024-04-11T15:34:06.4543390Z     ░    gitleaks
+2024-04-11T15:34:06.4543591Z 
+2024-04-11T15:34:06.4543881Z [90m3:34PM[0m [32mINF[0m scan completed in 9.92ms
+2024-04-11T15:34:06.4544497Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.4544918Z ------[0m
+2024-04-11T15:34:06.4830344Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.4868537Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/superlinter.yml][0m
+2024-04-11T15:34:06.5219816Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[superlinter.yml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.5256189Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.5256924Z ------
+2024-04-11T15:34:06.5257091Z 
+2024-04-11T15:34:06.5257267Z     ○
+2024-04-11T15:34:06.5257592Z     │╲
+2024-04-11T15:34:06.5258003Z     │ ○
+2024-04-11T15:34:06.5258325Z     ○ ░
+2024-04-11T15:34:06.5258610Z     ░    gitleaks
+2024-04-11T15:34:06.5258822Z 
+2024-04-11T15:34:06.5259157Z [90m3:34PM[0m [32mINF[0m scan completed in 9.23ms
+2024-04-11T15:34:06.5259728Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.5260137Z ------[0m
+2024-04-11T15:34:06.5540599Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.5575836Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/.gitignore][0m
+2024-04-11T15:34:06.5893434Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[.gitignore][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.5932265Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.5932868Z ------
+2024-04-11T15:34:06.5933027Z 
+2024-04-11T15:34:06.5933200Z     ○
+2024-04-11T15:34:06.5933595Z     │╲
+2024-04-11T15:34:06.5933913Z     │ ○
+2024-04-11T15:34:06.5934261Z     ○ ░
+2024-04-11T15:34:06.5934621Z     ░    gitleaks
+2024-04-11T15:34:06.5934832Z 
+2024-04-11T15:34:06.5935092Z [90m3:34PM[0m [32mINF[0m scan completed in 8.41ms
+2024-04-11T15:34:06.5935649Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.5936112Z ------[0m
+2024-04-11T15:34:06.6280844Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.6286739Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/Dockerfile][0m
+2024-04-11T15:34:06.6613129Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[Dockerfile][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.6649740Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.6650420Z ------
+2024-04-11T15:34:06.6650583Z 
+2024-04-11T15:34:06.6650732Z     ○
+2024-04-11T15:34:06.6651309Z     │╲
+2024-04-11T15:34:06.6651640Z     │ ○
+2024-04-11T15:34:06.6652034Z     ○ ░
+2024-04-11T15:34:06.6652499Z     ░    gitleaks
+2024-04-11T15:34:06.6652765Z 
+2024-04-11T15:34:06.6653122Z [90m3:34PM[0m [32mINF[0m scan completed in 8.51ms
+2024-04-11T15:34:06.6653740Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.6654294Z ------[0m
+2024-04-11T15:34:06.6939894Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.6975312Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/Makefile][0m
+2024-04-11T15:34:06.7297724Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[Makefile][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.7334238Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.7335137Z ------
+2024-04-11T15:34:06.7335438Z 
+2024-04-11T15:34:06.7335666Z     ○
+2024-04-11T15:34:06.7336185Z     │╲
+2024-04-11T15:34:06.7336861Z     │ ○
+2024-04-11T15:34:06.7337361Z     ○ ░
+2024-04-11T15:34:06.7337909Z     ░    gitleaks
+2024-04-11T15:34:06.7338218Z 
+2024-04-11T15:34:06.7338724Z [90m3:34PM[0m [32mINF[0m scan completed in 9.19ms
+2024-04-11T15:34:06.7339659Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.7340105Z ------[0m
+2024-04-11T15:34:06.7625463Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.7662505Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/README.md][0m
+2024-04-11T15:34:06.8060194Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[README.md][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.8096285Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.8097158Z ------
+2024-04-11T15:34:06.8097432Z 
+2024-04-11T15:34:06.8097575Z     ○
+2024-04-11T15:34:06.8098030Z     │╲
+2024-04-11T15:34:06.8098331Z     │ ○
+2024-04-11T15:34:06.8098666Z     ○ ░
+2024-04-11T15:34:06.8099066Z     ░    gitleaks
+2024-04-11T15:34:06.8099252Z 
+2024-04-11T15:34:06.8099506Z [90m3:34PM[0m [32mINF[0m scan completed in 13ms
+2024-04-11T15:34:06.8100088Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.8100606Z ------[0m
+2024-04-11T15:34:06.8381141Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.8417534Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/go.mod][0m
+2024-04-11T15:34:06.8733668Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[go.mod][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.8771475Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.8772397Z ------
+2024-04-11T15:34:06.8772824Z 
+2024-04-11T15:34:06.8772989Z     ○
+2024-04-11T15:34:06.8773345Z     │╲
+2024-04-11T15:34:06.8773622Z     │ ○
+2024-04-11T15:34:06.8774025Z     ○ ░
+2024-04-11T15:34:06.8774350Z     ░    gitleaks
+2024-04-11T15:34:06.8774531Z 
+2024-04-11T15:34:06.8774789Z [90m3:34PM[0m [32mINF[0m scan completed in 8.34ms
+2024-04-11T15:34:06.8775511Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.8776262Z ------[0m
+2024-04-11T15:34:06.9051821Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.9087387Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/go.sum][0m
+2024-04-11T15:34:06.9425723Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m    - File:[0;37m[go.sum][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:06.9462517Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:06.9463304Z ------
+2024-04-11T15:34:06.9463495Z 
+2024-04-11T15:34:06.9463628Z     ○
+2024-04-11T15:34:06.9463973Z     │╲
+2024-04-11T15:34:06.9464331Z     │ ○
+2024-04-11T15:34:06.9464652Z     ○ ░
+2024-04-11T15:34:06.9464973Z     ░    gitleaks
+2024-04-11T15:34:06.9465217Z 
+2024-04-11T15:34:06.9465476Z [90m3:34PM[0m [32mINF[0m scan completed in 8.5ms
+2024-04-11T15:34:06.9466023Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:06.9466595Z ------[0m
+2024-04-11T15:34:06.9745109Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:06.9781050Z [0m2024-04-11 15:34:06 [0;34m[INFO][0m   File:[/github/workspace/guestbook-controller.yaml][0m
+2024-04-11T15:34:07.0107400Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.0145232Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.0145801Z ------
+2024-04-11T15:34:07.0145991Z 
+2024-04-11T15:34:07.0146140Z     ○
+2024-04-11T15:34:07.0146865Z     │╲
+2024-04-11T15:34:07.0147376Z     │ ○
+2024-04-11T15:34:07.0147972Z     ○ ░
+2024-04-11T15:34:07.0148717Z     ░    gitleaks
+2024-04-11T15:34:07.0149018Z 
+2024-04-11T15:34:07.0149447Z [90m3:34PM[0m [32mINF[0m scan completed in 8.49ms
+2024-04-11T15:34:07.0150264Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.0150836Z ------[0m
+2024-04-11T15:34:07.0430036Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.0465372Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/guestbook-page.png][0m
+2024-04-11T15:34:07.0812346Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[guestbook-page.png][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.0848177Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.0848893Z ------
+2024-04-11T15:34:07.0849229Z 
+2024-04-11T15:34:07.0849382Z     ○
+2024-04-11T15:34:07.0849746Z     │╲
+2024-04-11T15:34:07.0850157Z     │ ○
+2024-04-11T15:34:07.0850454Z     ○ ░
+2024-04-11T15:34:07.0850781Z     ░    gitleaks
+2024-04-11T15:34:07.0850961Z 
+2024-04-11T15:34:07.0851324Z [90m3:34PM[0m [32mINF[0m scan completed in 11.1ms
+2024-04-11T15:34:07.0851848Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.0852272Z ------[0m
+2024-04-11T15:34:07.1129798Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.1165311Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/guestbook-service.yaml][0m
+2024-04-11T15:34:07.1491533Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.1526273Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.1526865Z ------
+2024-04-11T15:34:07.1527034Z 
+2024-04-11T15:34:07.1527170Z     ○
+2024-04-11T15:34:07.1527644Z     │╲
+2024-04-11T15:34:07.1527963Z     │ ○
+2024-04-11T15:34:07.1528231Z     ○ ░
+2024-04-11T15:34:07.1528654Z     ░    gitleaks
+2024-04-11T15:34:07.1528838Z 
+2024-04-11T15:34:07.1529123Z [90m3:34PM[0m [32mINF[0m scan completed in 8.43ms
+2024-04-11T15:34:07.1529628Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.1530150Z ------[0m
+2024-04-11T15:34:07.1810436Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.1846023Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-controller.yaml][0m
+2024-04-11T15:34:07.2192775Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.2230273Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.2230889Z ------
+2024-04-11T15:34:07.2231198Z 
+2024-04-11T15:34:07.2231344Z     ○
+2024-04-11T15:34:07.2231699Z     │╲
+2024-04-11T15:34:07.2232045Z     │ ○
+2024-04-11T15:34:07.2232406Z     ○ ░
+2024-04-11T15:34:07.2232751Z     ░    gitleaks
+2024-04-11T15:34:07.2232930Z 
+2024-04-11T15:34:07.2233217Z [90m3:34PM[0m [32mINF[0m scan completed in 8.92ms
+2024-04-11T15:34:07.2233810Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.2234244Z ------[0m
+2024-04-11T15:34:07.2522341Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.2557269Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-service.yaml][0m
+2024-04-11T15:34:07.2888142Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.2925768Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.2926911Z ------
+2024-04-11T15:34:07.2927129Z 
+2024-04-11T15:34:07.2927310Z     ○
+2024-04-11T15:34:07.2927613Z     │╲
+2024-04-11T15:34:07.2928043Z     │ ○
+2024-04-11T15:34:07.2928356Z     ○ ░
+2024-04-11T15:34:07.2928647Z     ░    gitleaks
+2024-04-11T15:34:07.2928937Z 
+2024-04-11T15:34:07.2929214Z [90m3:34PM[0m [32mINF[0m scan completed in 8.85ms
+2024-04-11T15:34:07.2929753Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.2930145Z ------[0m
+2024-04-11T15:34:07.3212294Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.3248235Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-controller.yaml][0m
+2024-04-11T15:34:07.3563173Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.3597539Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.3598587Z ------
+2024-04-11T15:34:07.3598750Z 
+2024-04-11T15:34:07.3599040Z     ○
+2024-04-11T15:34:07.3599377Z     │╲
+2024-04-11T15:34:07.3599692Z     │ ○
+2024-04-11T15:34:07.3600092Z     ○ ░
+2024-04-11T15:34:07.3600388Z     ░    gitleaks
+2024-04-11T15:34:07.3600607Z 
+2024-04-11T15:34:07.3600871Z [90m3:34PM[0m [32mINF[0m scan completed in 8.18ms
+2024-04-11T15:34:07.3601494Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.3601968Z ------[0m
+2024-04-11T15:34:07.3880823Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.3915850Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-service.yaml][0m
+2024-04-11T15:34:07.4236080Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.4270995Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.4272255Z ------
+2024-04-11T15:34:07.4272602Z 
+2024-04-11T15:34:07.4272773Z     ○
+2024-04-11T15:34:07.4273147Z     │╲
+2024-04-11T15:34:07.4273564Z     │ ○
+2024-04-11T15:34:07.4273938Z     ○ ░
+2024-04-11T15:34:07.4274282Z     ░    gitleaks
+2024-04-11T15:34:07.4274528Z 
+2024-04-11T15:34:07.4274902Z [90m3:34PM[0m [32mINF[0m scan completed in 8.28ms
+2024-04-11T15:34:07.4275562Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.4276061Z ------[0m
+2024-04-11T15:34:07.4563417Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.4598433Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-replica-controller.yaml][0m
+2024-04-11T15:34:07.4917341Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.4953385Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.4954558Z ------
+2024-04-11T15:34:07.4954904Z 
+2024-04-11T15:34:07.4955084Z     ○
+2024-04-11T15:34:07.4955671Z     │╲
+2024-04-11T15:34:07.4956013Z     │ ○
+2024-04-11T15:34:07.4956374Z     ○ ░
+2024-04-11T15:34:07.4956919Z     ░    gitleaks
+2024-04-11T15:34:07.4957105Z 
+2024-04-11T15:34:07.4957457Z [90m3:34PM[0m [32mINF[0m scan completed in 8.76ms
+2024-04-11T15:34:07.4958321Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.4958986Z ------[0m
+2024-04-11T15:34:07.5233378Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.5268850Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-slave-svc.yaml][0m
+2024-04-11T15:34:07.5588303Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-slave-svc.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.5624303Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.5624899Z ------
+2024-04-11T15:34:07.5625240Z 
+2024-04-11T15:34:07.5625385Z     ○
+2024-04-11T15:34:07.5625747Z     │╲
+2024-04-11T15:34:07.5626040Z     │ ○
+2024-04-11T15:34:07.5626454Z     ○ ░
+2024-04-11T15:34:07.5626793Z     ░    gitleaks
+2024-04-11T15:34:07.5626976Z 
+2024-04-11T15:34:07.5627244Z [90m3:34PM[0m [32mINF[0m scan completed in 8.61ms
+2024-04-11T15:34:07.5628010Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.5628472Z ------[0m
+2024-04-11T15:34:07.5904640Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.5938999Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/main.go][0m
+2024-04-11T15:34:07.6269607Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[main.go][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.6305172Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.6306170Z ------
+2024-04-11T15:34:07.6306411Z 
+2024-04-11T15:34:07.6306565Z     ○
+2024-04-11T15:34:07.6306982Z     │╲
+2024-04-11T15:34:07.6307328Z     │ ○
+2024-04-11T15:34:07.6307604Z     ○ ░
+2024-04-11T15:34:07.6308002Z     ░    gitleaks
+2024-04-11T15:34:07.6308200Z 
+2024-04-11T15:34:07.6308495Z [90m3:34PM[0m [32mINF[0m scan completed in 9.92ms
+2024-04-11T15:34:07.6309002Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.6309497Z ------[0m
+2024-04-11T15:34:07.6590866Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.6627484Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/public/index.html][0m
+2024-04-11T15:34:07.6954900Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[index.html][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.6991724Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.6992696Z ------
+2024-04-11T15:34:07.6993099Z 
+2024-04-11T15:34:07.6993285Z     ○
+2024-04-11T15:34:07.6993653Z     │╲
+2024-04-11T15:34:07.6993967Z     │ ○
+2024-04-11T15:34:07.6994318Z     ○ ░
+2024-04-11T15:34:07.6994660Z     ░    gitleaks
+2024-04-11T15:34:07.6994841Z 
+2024-04-11T15:34:07.6995134Z [90m3:34PM[0m [32mINF[0m scan completed in 8.66ms
+2024-04-11T15:34:07.6995713Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.6996155Z ------[0m
+2024-04-11T15:34:07.7271783Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.7306784Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/public/script.js][0m
+2024-04-11T15:34:07.7644654Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[script.js][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.7680172Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.7681126Z ------
+2024-04-11T15:34:07.7681314Z 
+2024-04-11T15:34:07.7681456Z     ○
+2024-04-11T15:34:07.7681813Z     │╲
+2024-04-11T15:34:07.7682216Z     │ ○
+2024-04-11T15:34:07.7682491Z     ○ ░
+2024-04-11T15:34:07.7682831Z     ░    gitleaks
+2024-04-11T15:34:07.7683082Z 
+2024-04-11T15:34:07.7683378Z [90m3:34PM[0m [32mINF[0m scan completed in 8.77ms
+2024-04-11T15:34:07.7683901Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.7684363Z ------[0m
+2024-04-11T15:34:07.7961820Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.7998120Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/public/style.css][0m
+2024-04-11T15:34:07.8322147Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[style.css][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.8357360Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.8358319Z ------
+2024-04-11T15:34:07.8358484Z 
+2024-04-11T15:34:07.8358623Z     ○
+2024-04-11T15:34:07.8359319Z     │╲
+2024-04-11T15:34:07.8359685Z     │ ○
+2024-04-11T15:34:07.8359965Z     ○ ░
+2024-04-11T15:34:07.8360373Z     ░    gitleaks
+2024-04-11T15:34:07.8360572Z 
+2024-04-11T15:34:07.8360859Z [90m3:34PM[0m [32mINF[0m scan completed in 8.51ms
+2024-04-11T15:34:07.8361360Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.8361876Z ------[0m
+2024-04-11T15:34:07.8637369Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.8672939Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/redis-master-controller.yaml][0m
+2024-04-11T15:34:07.8985092Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.9020993Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.9021846Z ------
+2024-04-11T15:34:07.9022120Z 
+2024-04-11T15:34:07.9022390Z     ○
+2024-04-11T15:34:07.9022922Z     │╲
+2024-04-11T15:34:07.9023605Z     │ ○
+2024-04-11T15:34:07.9024222Z     ○ ░
+2024-04-11T15:34:07.9024807Z     ░    gitleaks
+2024-04-11T15:34:07.9025175Z 
+2024-04-11T15:34:07.9025622Z [90m3:34PM[0m [32mINF[0m scan completed in 8.07ms
+2024-04-11T15:34:07.9026220Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.9026624Z ------[0m
+2024-04-11T15:34:07.9303699Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:07.9339623Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/redis-master-service.yaml][0m
+2024-04-11T15:34:07.9666254Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:07.9702158Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:07.9702798Z ------
+2024-04-11T15:34:07.9703061Z 
+2024-04-11T15:34:07.9703372Z     ○
+2024-04-11T15:34:07.9703976Z     │╲
+2024-04-11T15:34:07.9704549Z     │ ○
+2024-04-11T15:34:07.9705122Z     ○ ░
+2024-04-11T15:34:07.9705733Z     ░    gitleaks
+2024-04-11T15:34:07.9706102Z 
+2024-04-11T15:34:07.9706535Z [90m3:34PM[0m [32mINF[0m scan completed in 8.59ms
+2024-04-11T15:34:07.9707126Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:07.9707618Z ------[0m
+2024-04-11T15:34:07.9981772Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:08.0016814Z [0m2024-04-11 15:34:07 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-controller.yaml][0m
+2024-04-11T15:34:08.0350730Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:08.0388012Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:08.0388812Z ------
+2024-04-11T15:34:08.0388965Z 
+2024-04-11T15:34:08.0389262Z     ○
+2024-04-11T15:34:08.0389584Z     │╲
+2024-04-11T15:34:08.0389898Z     │ ○
+2024-04-11T15:34:08.0390322Z     ○ ░
+2024-04-11T15:34:08.0390621Z     ░    gitleaks
+2024-04-11T15:34:08.0390834Z 
+2024-04-11T15:34:08.0391097Z [90m3:34PM[0m [32mINF[0m scan completed in 8.68ms
+2024-04-11T15:34:08.0391726Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:08.0392118Z ------[0m
+2024-04-11T15:34:08.0671736Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:08.0708550Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-service.yaml][0m
+2024-04-11T15:34:08.1044140Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m    - File:[0;37m[redis-replica-service.yaml][0;34m was linted with [0;37m[gitleaks][0;34m successfully[0m
+2024-04-11T15:34:08.1080360Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:08.1081485Z ------
+2024-04-11T15:34:08.1081794Z 
+2024-04-11T15:34:08.1081946Z     ○
+2024-04-11T15:34:08.1082374Z     │╲
+2024-04-11T15:34:08.1082687Z     │ ○
+2024-04-11T15:34:08.1083251Z     ○ ░
+2024-04-11T15:34:08.1083710Z     ░    gitleaks
+2024-04-11T15:34:08.1083903Z 
+2024-04-11T15:34:08.1084167Z [90m3:34PM[0m [32mINF[0m scan completed in 9.02ms
+2024-04-11T15:34:08.1084721Z [90m3:34PM[0m [32mINF[0m no leaks found
+2024-04-11T15:34:08.1085268Z ------[0m
+2024-04-11T15:34:08.1877812Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:08.1913513Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:08.1950187Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:08.2022308Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   Linting [GO] files...[0m
+2024-04-11T15:34:08.2058859Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:08.2095579Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:08.2341767Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:08.2379016Z [0m2024-04-11 15:34:08 [0;34m[INFO][0m   File:[/github/workspace/main.go][0m
+2024-04-11T15:34:11.7763492Z [0m2024-04-11 15:34:11 [0;31m[ERROR][0m   Found errors in [golangci-lint] linter![0m
+2024-04-11T15:34:11.7800165Z [0m2024-04-11 15:34:11 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:11.7800898Z ------
+2024-04-11T15:34:11.7803132Z main.go:31: File is not `goimports`-ed (goimports)
+2024-04-11T15:34:11.7803748Z 	masterPool *simpleredis.ConnectionPool
+2024-04-11T15:34:11.7804258Z 	replicaPool  *simpleredis.ConnectionPool
+2024-04-11T15:34:11.7804791Z ------[0m
+2024-04-11T15:34:11.8969219Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:11.9003987Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:11.9041322Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:11.9115553Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   Linting [HTML] files...[0m
+2024-04-11T15:34:11.9152762Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:11.9189854Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:11.9447051Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:11.9483615Z [0m2024-04-11 15:34:11 [0;34m[INFO][0m   File:[/github/workspace/public/index.html][0m
+2024-04-11T15:34:12.1166392Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m    - File:[0;37m[index.html][0;34m was linted with [0;37m[htmlhint][0;34m successfully[0m
+2024-04-11T15:34:12.1202991Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:12.1204078Z ------
+2024-04-11T15:34:12.1204348Z 
+2024-04-11T15:34:12.1204928Z    Config loaded: /action/lib/.automation/.htmlhintrc
+2024-04-11T15:34:12.1205350Z 
+2024-04-11T15:34:12.1205665Z Scanned 1 files, no errors found (15 ms).
+2024-04-11T15:34:12.1206103Z ------[0m
+2024-04-11T15:34:12.1982662Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:12.2018783Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:12.2054228Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:12.2124624Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   Linting [JAVASCRIPT_ES] files...[0m
+2024-04-11T15:34:12.2160353Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:12.2194849Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:12.2443743Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:12.2479512Z [0m2024-04-11 15:34:12 [0;34m[INFO][0m   File:[/github/workspace/public/script.js][0m
+2024-04-11T15:34:13.5014715Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m    - File:[0;37m[script.js][0;34m was linted with [0;37m[eslint][0;34m successfully[0m
+2024-04-11T15:34:13.5461113Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:13.5497648Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:13.5535603Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:13.5610394Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   Linting [JAVASCRIPT_STANDARD] files...[0m
+2024-04-11T15:34:13.5647028Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:13.5685525Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:13.5937140Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:13.5973273Z [0m2024-04-11 15:34:13 [0;34m[INFO][0m   File:[/github/workspace/public/script.js][0m
+2024-04-11T15:34:14.6264363Z [0m2024-04-11 15:34:14 [0;31m[ERROR][0m   Found errors in [standard] linter![0m
+2024-04-11T15:34:14.6307021Z [0m2024-04-11 15:34:14 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:14.6308611Z ------
+2024-04-11T15:34:14.6309434Z standard: Use JavaScript Standard Style (https://standardjs.com)
+2024-04-11T15:34:14.6310961Z standard: Some warnings are present which will be errors in the next version (https://standardjs.com)
+2024-04-11T15:34:14.6311903Z standard: Run `standard --fix` to automatically fix some problems.
+2024-04-11T15:34:14.6312802Z   /github/workspace/public/script.js:1:1: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6314113Z   /github/workspace/public/script.js:1:27: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6315321Z   /github/workspace/public/script.js:2:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6316265Z   /github/workspace/public/script.js:2:28: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6317143Z   /github/workspace/public/script.js:2:30: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6318101Z   /github/workspace/public/script.js:2:43: Extra semicolon. (semi)
+2024-04-11T15:34:14.6319110Z   /github/workspace/public/script.js:3:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6320123Z   /github/workspace/public/script.js:3:24: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6320891Z   /github/workspace/public/script.js:3:26: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6321641Z   /github/workspace/public/script.js:3:47: Extra semicolon. (semi)
+2024-04-11T15:34:14.6322601Z   /github/workspace/public/script.js:4:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6323499Z   /github/workspace/public/script.js:4:21: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6324438Z   /github/workspace/public/script.js:4:23: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6325236Z   /github/workspace/public/script.js:4:41: Extra semicolon. (semi)
+2024-04-11T15:34:14.6326176Z   /github/workspace/public/script.js:5:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6327087Z   /github/workspace/public/script.js:5:23: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6327898Z   /github/workspace/public/script.js:5:25: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6328645Z   /github/workspace/public/script.js:5:45: Extra semicolon. (semi)
+2024-04-11T15:34:14.6329543Z   /github/workspace/public/script.js:6:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6330514Z   /github/workspace/public/script.js:6:29: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6331255Z   /github/workspace/public/script.js:6:31: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6331983Z   /github/workspace/public/script.js:6:58: Extra semicolon. (semi)
+2024-04-11T15:34:14.6333209Z   /github/workspace/public/script.js:7:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6334109Z   /github/workspace/public/script.js:7:28: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6334878Z   /github/workspace/public/script.js:7:30: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6335703Z   /github/workspace/public/script.js:7:56: Extra semicolon. (semi)
+2024-04-11T15:34:14.6336627Z   /github/workspace/public/script.js:9:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6337731Z   /github/workspace/public/script.js:9:40: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6338918Z   /github/workspace/public/script.js:10:27: Extra semicolon. (semi)
+2024-04-11T15:34:14.6339693Z   /github/workspace/public/script.js:11:5: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6340720Z   /github/workspace/public/script.js:11:26: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6342563Z   /github/workspace/public/script.js:12:29: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6344054Z   /github/workspace/public/script.js:12:43: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6345540Z   /github/workspace/public/script.js:12:50: Extra semicolon. (semi)
+2024-04-11T15:34:14.6346545Z   /github/workspace/public/script.js:13:7: Extra semicolon. (semi)
+2024-04-11T15:34:14.6347706Z   /github/workspace/public/script.js:16:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6348983Z   /github/workspace/public/script.js:16:34: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6349887Z   /github/workspace/public/script.js:17:23: Extra semicolon. (semi)
+2024-04-11T15:34:14.6350803Z   /github/workspace/public/script.js:18:5: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6351790Z   /github/workspace/public/script.js:20:29: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6352497Z   /github/workspace/public/script.js:20:42: Extra semicolon. (semi)
+2024-04-11T15:34:14.6353282Z   /github/workspace/public/script.js:21:7: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6354115Z   /github/workspace/public/script.js:21:17: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6354855Z   /github/workspace/public/script.js:21:73: Extra semicolon. (semi)
+2024-04-11T15:34:14.6355506Z   /github/workspace/public/script.js:23:17: Extra semicolon. (semi)
+2024-04-11T15:34:14.6356990Z   /github/workspace/public/script.js:27:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6359316Z   /github/workspace/public/script.js:27:17: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6360651Z   /github/workspace/public/script.js:27:25: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6361625Z   /github/workspace/public/script.js:27:33: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6362450Z   /github/workspace/public/script.js:27:41: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6363281Z   /github/workspace/public/script.js:27:49: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6364070Z   /github/workspace/public/script.js:27:56: Extra semicolon. (semi)
+2024-04-11T15:34:14.6365038Z   /github/workspace/public/script.js:28:3: Unexpected var, use let or const instead. (no-var) (warning)
+2024-04-11T15:34:14.6366188Z   /github/workspace/public/script.js:29:29: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6367185Z   /github/workspace/public/script.js:30:28: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6367950Z   /github/workspace/public/script.js:30:43: Extra semicolon. (semi)
+2024-04-11T15:34:14.6368985Z   /github/workspace/public/script.js:31:29: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6369860Z   /github/workspace/public/script.js:31:43: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6370835Z   /github/workspace/public/script.js:31:70: Extra semicolon. (semi)
+2024-04-11T15:34:14.6371605Z   /github/workspace/public/script.js:32:23: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6372462Z   /github/workspace/public/script.js:32:49: Extra semicolon. (semi)
+2024-04-11T15:34:14.6373108Z   /github/workspace/public/script.js:33:18: Extra semicolon. (semi)
+2024-04-11T15:34:14.6373765Z   /github/workspace/public/script.js:35:40: Extra semicolon. (semi)
+2024-04-11T15:34:14.6374506Z   /github/workspace/public/script.js:36:39: Extra semicolon. (semi)
+2024-04-11T15:34:14.6375487Z   /github/workspace/public/script.js:40:27: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6376643Z   /github/workspace/public/script.js:41:5: '$' is not defined. (no-undef)
+2024-04-11T15:34:14.6377508Z   /github/workspace/public/script.js:41:15: Strings must use singlequote. (quotes)
+2024-04-11T15:34:14.6378568Z   /github/workspace/public/script.js:42:15: Missing space before function parentheses. (space-before-function-paren)
+2024-04-11T15:34:14.6379433Z   /github/workspace/public/script.js:43:41: Extra semicolon. (semi)
+2024-04-11T15:34:14.6380173Z   /github/workspace/public/script.js:44:9: Extra semicolon. (semi)
+2024-04-11T15:34:14.6380841Z   /github/workspace/public/script.js:45:7: Extra semicolon. (semi)
+2024-04-11T15:34:14.6381513Z   /github/workspace/public/script.js:46:3: Extra semicolon. (semi)
+2024-04-11T15:34:14.6382502Z ------[0m
+2024-04-11T15:34:14.6755260Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:14.6790472Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:14.6825730Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:14.6899073Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   Linting [JSCPD] files...[0m
+2024-04-11T15:34:14.6934207Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:14.6971300Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:14.7220395Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:14.7256701Z [0m2024-04-11 15:34:14 [0;34m[INFO][0m   File:[/github/workspace/.github/.golangci.yml][0m
+2024-04-11T15:34:15.2036649Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m    - File:[0;37m[.golangci.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:15.2077524Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:15.2078850Z ------
+2024-04-11T15:34:15.2079377Z Found 0 clones.
+2024-04-11T15:34:15.2079960Z Detection time:: 12.742ms
+2024-04-11T15:34:15.2080736Z ------[0m
+2024-04-11T15:34:15.2368255Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:15.2404778Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m   File:[/github/workspace/.github/.lintr][0m
+2024-04-11T15:34:15.6805983Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m    - File:[0;37m[.lintr][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:15.6845468Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:15.6846066Z ------
+2024-04-11T15:34:15.6846576Z Detection time:: 0.883ms
+2024-04-11T15:34:15.6847003Z ------[0m
+2024-04-11T15:34:15.7141921Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:15.7177255Z [0m2024-04-11 15:34:15 [0;34m[INFO][0m   File:[/github/workspace/.github/dependabot.yml][0m
+2024-04-11T15:34:16.1816698Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m    - File:[0;37m[dependabot.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:16.1852753Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:16.1853684Z ------
+2024-04-11T15:34:16.1854253Z Found 0 clones.
+2024-04-11T15:34:16.1855091Z Detection time:: 11.744ms
+2024-04-11T15:34:16.1855536Z ------[0m
+2024-04-11T15:34:16.2141223Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:16.2181403Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/checkmarx-one.yml][0m
+2024-04-11T15:34:16.6828569Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m    - File:[0;37m[checkmarx-one.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:16.6865010Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:16.6865957Z ------
+2024-04-11T15:34:16.6866496Z Found 0 clones.
+2024-04-11T15:34:16.6867222Z Detection time:: 14.17ms
+2024-04-11T15:34:16.6868174Z ------[0m
+2024-04-11T15:34:16.7150937Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:16.7186583Z [0m2024-04-11 15:34:16 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/snyk-security.yml][0m
+2024-04-11T15:34:17.1771186Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m    - File:[0;37m[snyk-security.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:17.1809227Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:17.1810087Z ------
+2024-04-11T15:34:17.1810565Z Found 0 clones.
+2024-04-11T15:34:17.1811284Z Detection time:: 16.942ms
+2024-04-11T15:34:17.1811838Z ------[0m
+2024-04-11T15:34:17.2097691Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:17.2133573Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/super-linter.yml][0m
+2024-04-11T15:34:17.6632123Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m    - File:[0;37m[super-linter.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:17.6673253Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:17.6674093Z ------
+2024-04-11T15:34:17.6674543Z Found 0 clones.
+2024-04-11T15:34:17.6674970Z Detection time:: 16.529ms
+2024-04-11T15:34:17.6675336Z ------[0m
+2024-04-11T15:34:17.6970368Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:17.7005758Z [0m2024-04-11 15:34:17 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/superlinter.yml][0m
+2024-04-11T15:34:18.1431871Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m    - File:[0;37m[superlinter.yml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:18.1466837Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:18.1468061Z ------
+2024-04-11T15:34:18.1469509Z Found 0 clones.
+2024-04-11T15:34:18.1470117Z Detection time:: 9.896ms
+2024-04-11T15:34:18.1470767Z ------[0m
+2024-04-11T15:34:18.1747899Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:18.1782585Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m   File:[/github/workspace/.gitignore][0m
+2024-04-11T15:34:18.6156171Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m    - File:[0;37m[.gitignore][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:18.6192524Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:18.6193371Z ------
+2024-04-11T15:34:18.6194080Z Detection time:: 0.824ms
+2024-04-11T15:34:18.6194730Z ------[0m
+2024-04-11T15:34:18.6479561Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:18.6514425Z [0m2024-04-11 15:34:18 [0;34m[INFO][0m   File:[/github/workspace/Dockerfile][0m
+2024-04-11T15:34:19.0972581Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m    - File:[0;37m[Dockerfile][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:19.1013304Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:19.1013925Z ------
+2024-04-11T15:34:19.1014243Z Detection time:: 0.729ms
+2024-04-11T15:34:19.1014785Z ------[0m
+2024-04-11T15:34:19.1298771Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:19.1333599Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m   File:[/github/workspace/Makefile][0m
+2024-04-11T15:34:19.5759909Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m    - File:[0;37m[Makefile][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:19.5798237Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:19.5799398Z ------
+2024-04-11T15:34:19.5799973Z Detection time:: 0.861ms
+2024-04-11T15:34:19.5800582Z ------[0m
+2024-04-11T15:34:19.6085864Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:19.6121044Z [0m2024-04-11 15:34:19 [0;34m[INFO][0m   File:[/github/workspace/README.md][0m
+2024-04-11T15:34:20.1209517Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m    - File:[0;37m[README.md][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:20.1247902Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:20.1248709Z ------
+2024-04-11T15:34:20.1249034Z Found 0 clones.
+2024-04-11T15:34:20.1249387Z Detection time:: 63.721ms
+2024-04-11T15:34:20.1249844Z ------[0m
+2024-04-11T15:34:20.1535863Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:20.1570630Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m   File:[/github/workspace/go.mod][0m
+2024-04-11T15:34:20.5879111Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m    - File:[0;37m[go.mod][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:20.5920871Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:20.5921997Z ------
+2024-04-11T15:34:20.5922543Z Detection time:: 0.851ms
+2024-04-11T15:34:20.5923201Z ------[0m
+2024-04-11T15:34:20.6212902Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:20.6250813Z [0m2024-04-11 15:34:20 [0;34m[INFO][0m   File:[/github/workspace/go.sum][0m
+2024-04-11T15:34:21.0758277Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m    - File:[0;37m[go.sum][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:21.0794033Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:21.0794992Z ------
+2024-04-11T15:34:21.0795642Z Detection time:: 0.845ms
+2024-04-11T15:34:21.0796285Z ------[0m
+2024-04-11T15:34:21.1084915Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:21.1121199Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m   File:[/github/workspace/guestbook-controller.yaml][0m
+2024-04-11T15:34:21.5608858Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:21.5645316Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:21.5646072Z ------
+2024-04-11T15:34:21.5646550Z Found 0 clones.
+2024-04-11T15:34:21.5647284Z Detection time:: 9.387ms
+2024-04-11T15:34:21.5647899Z ------[0m
+2024-04-11T15:34:21.5934073Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:21.5969146Z [0m2024-04-11 15:34:21 [0;34m[INFO][0m   File:[/github/workspace/guestbook-page.png][0m
+2024-04-11T15:34:22.0243403Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m    - File:[0;37m[guestbook-page.png][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:22.0278437Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:22.0279316Z ------
+2024-04-11T15:34:22.0279666Z Detection time:: 0.835ms
+2024-04-11T15:34:22.0280188Z ------[0m
+2024-04-11T15:34:22.0567440Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:22.0602765Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m   File:[/github/workspace/guestbook-service.yaml][0m
+2024-04-11T15:34:22.5010186Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:22.5046361Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:22.5047509Z ------
+2024-04-11T15:34:22.5048026Z Found 0 clones.
+2024-04-11T15:34:22.5048540Z Detection time:: 10.243ms
+2024-04-11T15:34:22.5049277Z ------[0m
+2024-04-11T15:34:22.5334487Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:22.5370907Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-controller.yaml][0m
+2024-04-11T15:34:22.9681341Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:22.9714817Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:22.9715971Z ------
+2024-04-11T15:34:22.9716381Z Found 0 clones.
+2024-04-11T15:34:22.9716728Z Detection time:: 11.55ms
+2024-04-11T15:34:22.9717248Z ------[0m
+2024-04-11T15:34:22.9998800Z [0m2024-04-11 15:34:22 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:23.0033064Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-service.yaml][0m
+2024-04-11T15:34:23.4407327Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:23.4443667Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:23.4444526Z ------
+2024-04-11T15:34:23.4445039Z Found 0 clones.
+2024-04-11T15:34:23.4445853Z Detection time:: 9.806ms
+2024-04-11T15:34:23.4446566Z ------[0m
+2024-04-11T15:34:23.4727732Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:23.4763725Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-controller.yaml][0m
+2024-04-11T15:34:23.9259756Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:23.9298529Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:23.9299184Z ------
+2024-04-11T15:34:23.9299455Z Found 0 clones.
+2024-04-11T15:34:23.9299958Z Detection time:: 12.228ms
+2024-04-11T15:34:23.9300349Z ------[0m
+2024-04-11T15:34:23.9579596Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:23.9614241Z [0m2024-04-11 15:34:23 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-service.yaml][0m
+2024-04-11T15:34:24.4106082Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:24.4140463Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:24.4141411Z ------
+2024-04-11T15:34:24.4141850Z Found 0 clones.
+2024-04-11T15:34:24.4142387Z Detection time:: 11.814ms
+2024-04-11T15:34:24.4142791Z ------[0m
+2024-04-11T15:34:24.4429782Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:24.4464947Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-replica-controller.yaml][0m
+2024-04-11T15:34:24.8885537Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:24.8922976Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:24.8923586Z ------
+2024-04-11T15:34:24.8924052Z Found 0 clones.
+2024-04-11T15:34:24.8924420Z Detection time:: 12.246ms
+2024-04-11T15:34:24.8924834Z ------[0m
+2024-04-11T15:34:24.9205576Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:24.9242261Z [0m2024-04-11 15:34:24 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-slave-svc.yaml][0m
+2024-04-11T15:34:25.3689541Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m    - File:[0;37m[redis-slave-svc.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:25.3725968Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:25.3726847Z ------
+2024-04-11T15:34:25.3727374Z Found 0 clones.
+2024-04-11T15:34:25.3728093Z Detection time:: 10.54ms
+2024-04-11T15:34:25.3728693Z ------[0m
+2024-04-11T15:34:25.4010337Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:25.4045790Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m   File:[/github/workspace/main.go][0m
+2024-04-11T15:34:25.8560719Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m    - File:[0;37m[main.go][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:25.8597483Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:25.8601703Z ------
+2024-04-11T15:34:25.8602180Z Found 0 clones.
+2024-04-11T15:34:25.8602675Z Detection time:: 25.403ms
+2024-04-11T15:34:25.8603111Z ------[0m
+2024-04-11T15:34:25.8889500Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:25.8924700Z [0m2024-04-11 15:34:25 [0;34m[INFO][0m   File:[/github/workspace/public/index.html][0m
+2024-04-11T15:34:26.3605465Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m    - File:[0;37m[index.html][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:26.3643360Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:26.3644451Z ------
+2024-04-11T15:34:26.3645088Z Found 0 clones.
+2024-04-11T15:34:26.3645781Z Detection time:: 20.965ms
+2024-04-11T15:34:26.3646433Z ------[0m
+2024-04-11T15:34:26.3943697Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:26.3979612Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m   File:[/github/workspace/public/script.js][0m
+2024-04-11T15:34:26.8777090Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m    - File:[0;37m[script.js][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:26.8814457Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:26.8815412Z ------
+2024-04-11T15:34:26.8815920Z Found 0 clones.
+2024-04-11T15:34:26.8816632Z Detection time:: 22.827ms
+2024-04-11T15:34:26.8817239Z ------[0m
+2024-04-11T15:34:26.9104895Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:26.9140707Z [0m2024-04-11 15:34:26 [0;34m[INFO][0m   File:[/github/workspace/public/style.css][0m
+2024-04-11T15:34:27.3736957Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m    - File:[0;37m[style.css][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:27.3773790Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:27.3774954Z ------
+2024-04-11T15:34:27.3775441Z Found 0 clones.
+2024-04-11T15:34:27.3776145Z Detection time:: 13.805ms
+2024-04-11T15:34:27.3776780Z ------[0m
+2024-04-11T15:34:27.4062123Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:27.4100267Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m   File:[/github/workspace/redis-master-controller.yaml][0m
+2024-04-11T15:34:27.8563293Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:27.8600677Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:27.8601398Z ------
+2024-04-11T15:34:27.8601737Z Found 0 clones.
+2024-04-11T15:34:27.8602147Z Detection time:: 10.795ms
+2024-04-11T15:34:27.8602672Z ------[0m
+2024-04-11T15:34:27.8891747Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:27.8926341Z [0m2024-04-11 15:34:27 [0;34m[INFO][0m   File:[/github/workspace/redis-master-service.yaml][0m
+2024-04-11T15:34:28.3304748Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:28.3339761Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:28.3341027Z ------
+2024-04-11T15:34:28.3341749Z Found 0 clones.
+2024-04-11T15:34:28.3342568Z Detection time:: 8.057ms
+2024-04-11T15:34:28.3343305Z ------[0m
+2024-04-11T15:34:28.3623489Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:28.3659360Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-controller.yaml][0m
+2024-04-11T15:34:28.8093052Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:28.8128458Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:28.8129138Z ------
+2024-04-11T15:34:28.8129465Z Found 0 clones.
+2024-04-11T15:34:28.8129943Z Detection time:: 12.105ms
+2024-04-11T15:34:28.8130337Z ------[0m
+2024-04-11T15:34:28.8416534Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:28.8451170Z [0m2024-04-11 15:34:28 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-service.yaml][0m
+2024-04-11T15:34:29.2870478Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m    - File:[0;37m[redis-replica-service.yaml][0;34m was linted with [0;37m[jscpd][0;34m successfully[0m
+2024-04-11T15:34:29.2905441Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:29.2906121Z ------
+2024-04-11T15:34:29.2906445Z Found 0 clones.
+2024-04-11T15:34:29.2906983Z Detection time:: 9.91ms
+2024-04-11T15:34:29.2907356Z ------[0m
+2024-04-11T15:34:29.4387412Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:29.4423506Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:29.4459372Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:29.4531449Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   Linting [KUBERNETES_KUBEVAL] files...[0m
+2024-04-11T15:34:29.4567517Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:29.4603467Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:29.4851747Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:29.4889021Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   File:[/github/workspace/guestbook-controller.yaml][0m
+2024-04-11T15:34:29.6985998Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:29.7024202Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:29.7024817Z ------
+2024-04-11T15:34:29.7025560Z PASS - /github/workspace/guestbook-controller.yaml contains a valid ReplicationController (guestbook)
+2024-04-11T15:34:29.7026398Z ------[0m
+2024-04-11T15:34:29.7313680Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:29.7348736Z [0m2024-04-11 15:34:29 [0;34m[INFO][0m   File:[/github/workspace/guestbook-service.yaml][0m
+2024-04-11T15:34:30.1283790Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:30.1323487Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:30.1324301Z ------
+2024-04-11T15:34:30.1325243Z PASS - /github/workspace/guestbook-service.yaml contains a valid Service (guestbook)
+2024-04-11T15:34:30.1326376Z ------[0m
+2024-04-11T15:34:30.1610569Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:30.1648432Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-controller.yaml][0m
+2024-04-11T15:34:30.3629060Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:30.3664743Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:30.3665419Z ------
+2024-04-11T15:34:30.3666705Z PASS - /github/workspace/k8s cluster configuration files/guestbook-controller.yaml contains a valid ReplicationController (guestbook)
+2024-04-11T15:34:30.3667586Z ------[0m
+2024-04-11T15:34:30.3950668Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:30.3989876Z [0m2024-04-11 15:34:30 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-service.yaml][0m
+2024-04-11T15:34:34.1150500Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:34.1186126Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:34.1187050Z ------
+2024-04-11T15:34:34.1188201Z PASS - /github/workspace/k8s cluster configuration files/guestbook-service.yaml contains a valid Service (guestbook)
+2024-04-11T15:34:34.1189007Z ------[0m
+2024-04-11T15:34:34.1473934Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:34.1511415Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-controller.yaml][0m
+2024-04-11T15:34:34.3364990Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:34.3400161Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:34.3401070Z ------
+2024-04-11T15:34:34.3402024Z PASS - /github/workspace/k8s cluster configuration files/redis-master-controller.yaml contains a valid ReplicationController (redis-master)
+2024-04-11T15:34:34.3403078Z ------[0m
+2024-04-11T15:34:34.3684742Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:34.3722031Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-service.yaml][0m
+2024-04-11T15:34:34.5109020Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:34.5144717Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:34.5145573Z ------
+2024-04-11T15:34:34.5146422Z PASS - /github/workspace/k8s cluster configuration files/redis-master-service.yaml contains a valid Service (redis-master)
+2024-04-11T15:34:34.5147240Z ------[0m
+2024-04-11T15:34:34.5429368Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:34.5466166Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-replica-controller.yaml][0m
+2024-04-11T15:34:34.7188333Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:34.7226260Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:34.7227215Z ------
+2024-04-11T15:34:34.7228158Z PASS - /github/workspace/k8s cluster configuration files/redis-replica-controller.yaml contains a valid ReplicationController (redis-replica)
+2024-04-11T15:34:34.7229171Z ------[0m
+2024-04-11T15:34:34.7524549Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:34.7559601Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-slave-svc.yaml][0m
+2024-04-11T15:34:34.8880338Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m    - File:[0;37m[redis-slave-svc.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:34.8919092Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:34.8919938Z ------
+2024-04-11T15:34:34.8920775Z PASS - /github/workspace/k8s cluster configuration files/redis-slave-svc.yaml contains a valid Service (redis-slave)
+2024-04-11T15:34:34.8921628Z ------[0m
+2024-04-11T15:34:34.9210503Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:34.9247952Z [0m2024-04-11 15:34:34 [0;34m[INFO][0m   File:[/github/workspace/redis-master-controller.yaml][0m
+2024-04-11T15:34:35.0970839Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:35.1008927Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:35.1009821Z ------
+2024-04-11T15:34:35.1010975Z PASS - /github/workspace/redis-master-controller.yaml contains a valid ReplicationController (redis-master)
+2024-04-11T15:34:35.1011918Z ------[0m
+2024-04-11T15:34:35.1303889Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:35.1340891Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   File:[/github/workspace/redis-master-service.yaml][0m
+2024-04-11T15:34:35.2621852Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:35.2658210Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:35.2659328Z ------
+2024-04-11T15:34:35.2660436Z PASS - /github/workspace/redis-master-service.yaml contains a valid Service (redis-master)
+2024-04-11T15:34:35.2661724Z ------[0m
+2024-04-11T15:34:35.2951076Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:35.2987045Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-controller.yaml][0m
+2024-04-11T15:34:35.5137809Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:35.5175733Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:35.5176771Z ------
+2024-04-11T15:34:35.5177544Z PASS - /github/workspace/redis-replica-controller.yaml contains a valid ReplicationController (redis-replica)
+2024-04-11T15:34:35.5178350Z ------[0m
+2024-04-11T15:34:35.5465724Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:35.5502456Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-service.yaml][0m
+2024-04-11T15:34:35.7018016Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m    - File:[0;37m[redis-replica-service.yaml][0;34m was linted with [0;37m[kubeval][0;34m successfully[0m
+2024-04-11T15:34:35.7055579Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:35.7056221Z ------
+2024-04-11T15:34:35.7056940Z PASS - /github/workspace/redis-replica-service.yaml contains a valid Service (redis-replica)
+2024-04-11T15:34:35.7057819Z ------[0m
+2024-04-11T15:34:35.8906795Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:35.8941833Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:35.8979842Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:35.9050593Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   Linting [MARKDOWN] files...[0m
+2024-04-11T15:34:35.9086491Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:35.9122793Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:35.9368812Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:35.9406563Z [0m2024-04-11 15:34:35 [0;34m[INFO][0m   File:[/github/workspace/README.md][0m
+2024-04-11T15:34:36.1939376Z [0m2024-04-11 15:34:36 [0;31m[ERROR][0m   Found errors in [markdownlint] linter![0m
+2024-04-11T15:34:36.1980614Z [0m2024-04-11 15:34:36 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:36.1981811Z ------
+2024-04-11T15:34:36.1983453Z /github/workspace/README.md:1 MD041/first-line-heading/first-line-h1 First line in a file should be a top-level heading [Context: "## Guestbook Example"]
+2024-04-11T15:34:36.1986134Z /github/workspace/README.md:7 MD001/heading-increment/header-increment Heading levels should only increment by one level at a time [Expected: h3; Actual: h5]
+2024-04-11T15:34:36.1987492Z /github/workspace/README.md:9:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1988941Z /github/workspace/README.md:10:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1989960Z /github/workspace/README.md:11:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1991015Z /github/workspace/README.md:12:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1992103Z /github/workspace/README.md:13:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1993124Z /github/workspace/README.md:14:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1994088Z /github/workspace/README.md:15:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1995147Z /github/workspace/README.md:16:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1996163Z /github/workspace/README.md:17:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.1997104Z /github/workspace/README.md:27:401 MD013/line-length Line length [Expected: 400; Actual: 524]
+2024-04-11T15:34:36.1998795Z /github/workspace/README.md:32:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2000497Z /github/workspace/README.md:79:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2002099Z /github/workspace/README.md:102:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2003731Z /github/workspace/README.md:145:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2005347Z /github/workspace/README.md:170:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2006941Z /github/workspace/README.md:210:5 MD014/commands-show-output Dollar signs used before commands without showing output [Context: "$ kubectl create -f examples/g..."]
+2024-04-11T15:34:36.2008312Z /github/workspace/README.md:231:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.2009314Z /github/workspace/README.md:234:1 MD007/ul-indent Unordered list indentation [Expected: 0; Actual: 1]
+2024-04-11T15:34:36.2011709Z /github/workspace/README.md:246:1 MD053/link-image-reference-definitions Link and image reference definitions should be needed [Unused link or image reference definition: "cloud-console"] [Context: "[cloud-console]: https://conso..."]
+2024-04-11T15:34:36.2014717Z /github/workspace/README.md:270 MD042/no-empty-links No empty links [Context: "[Analytics]"]
+2024-04-11T15:34:36.2015709Z ------[0m
+2024-04-11T15:34:36.2423396Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:36.2459381Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:36.2495575Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:36.2568119Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   Linting [NATURAL_LANGUAGE] files...[0m
+2024-04-11T15:34:36.2604012Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:36.2639826Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:36.2888489Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:36.2924927Z [0m2024-04-11 15:34:36 [0;34m[INFO][0m   File:[/github/workspace/README.md][0m
+2024-04-11T15:34:36.8541998Z [0m2024-04-11 15:34:36 [0;31m[ERROR][0m   Found errors in [textlint] linter![0m
+2024-04-11T15:34:36.8579522Z [0m2024-04-11 15:34:36 [0;31m[ERROR][0m   Error code: 1. Command output:[0m
+2024-04-11T15:34:36.8580203Z ------
+2024-04-11T15:34:36.8580438Z 
+2024-04-11T15:34:36.8580724Z /github/workspace/README.md
+2024-04-11T15:34:36.8583408Z     3:132  ✓ error  Incorrect usage of the term: “front end”, use “frontend” instead  terminology
+2024-04-11T15:34:36.8584570Z   205:108  ✓ error  Incorrect usage of the term: “front end”, use “frontend” instead  terminology
+2024-04-11T15:34:36.8585124Z 
+2024-04-11T15:34:36.8585425Z ✖ 2 problems (2 errors, 0 warnings)
+2024-04-11T15:34:36.8585891Z ✓ 2 fixable problems.
+2024-04-11T15:34:36.8586281Z Try to run: $ textlint --fix [file]
+2024-04-11T15:34:36.8586770Z ------[0m
+2024-04-11T15:34:38.1264109Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   [0m
+2024-04-11T15:34:38.1299229Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:38.1334348Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:38.1406870Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   Linting [YAML] files...[0m
+2024-04-11T15:34:38.1442181Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:38.1476695Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:38.1722525Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.1758736Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/.golangci.yml][0m
+2024-04-11T15:34:38.2617397Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[.golangci.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.2652780Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.2653729Z ------
+2024-04-11T15:34:38.2654495Z /github/workspace/.github/.golangci.yml:9:81: [warning] line too long (81 > 80 characters) (line-length)
+2024-04-11T15:34:38.2655583Z /github/workspace/.github/.golangci.yml:29:81: [warning] line too long (94 > 80 characters) (line-length)
+2024-04-11T15:34:38.2862169Z ------[0m
+2024-04-11T15:34:38.2955704Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.2991170Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/dependabot.yml][0m
+2024-04-11T15:34:38.3806366Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[dependabot.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.3845141Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.3845947Z ------
+2024-04-11T15:34:38.3846955Z /github/workspace/.github/dependabot.yml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.3847992Z ------[0m
+2024-04-11T15:34:38.4126246Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.4161854Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/checkmarx-one.yml][0m
+2024-04-11T15:34:38.5035714Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[checkmarx-one.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.5073560Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.5074369Z ------
+2024-04-11T15:34:38.5075571Z /github/workspace/.github/workflows/checkmarx-one.yml:6:81: [warning] line too long (117 > 80 characters) (line-length)
+2024-04-11T15:34:38.5077584Z /github/workspace/.github/workflows/checkmarx-one.yml:7:81: [warning] line too long (118 > 80 characters) (line-length)
+2024-04-11T15:34:38.5079768Z /github/workspace/.github/workflows/checkmarx-one.yml:8:81: [warning] line too long (118 > 80 characters) (line-length)
+2024-04-11T15:34:38.5081377Z /github/workspace/.github/workflows/checkmarx-one.yml:9:81: [warning] line too long (82 > 80 characters) (line-length)
+2024-04-11T15:34:38.5082775Z /github/workspace/.github/workflows/checkmarx-one.yml:11:81: [warning] line too long (83 > 80 characters) (line-length)
+2024-04-11T15:34:38.5084016Z /github/workspace/.github/workflows/checkmarx-one.yml:12:81: [warning] line too long (125 > 80 characters) (line-length)
+2024-04-11T15:34:38.5085275Z /github/workspace/.github/workflows/checkmarx-one.yml:14:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.5086382Z /github/workspace/.github/workflows/checkmarx-one.yml:20:16: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.5087402Z /github/workspace/.github/workflows/checkmarx-one.yml:20:25: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.5088438Z /github/workspace/.github/workflows/checkmarx-one.yml:25:81: [warning] line too long (88 > 80 characters) (line-length)
+2024-04-11T15:34:38.5089510Z /github/workspace/.github/workflows/checkmarx-one.yml:31:81: [warning] line too long (92 > 80 characters) (line-length)
+2024-04-11T15:34:38.5090578Z /github/workspace/.github/workflows/checkmarx-one.yml:32:81: [warning] line too long (97 > 80 characters) (line-length)
+2024-04-11T15:34:38.5091631Z /github/workspace/.github/workflows/checkmarx-one.yml:37:81: [warning] line too long (82 > 80 characters) (line-length)
+2024-04-11T15:34:38.5092696Z /github/workspace/.github/workflows/checkmarx-one.yml:46:81: [warning] line too long (107 > 80 characters) (line-length)
+2024-04-11T15:34:38.5093769Z /github/workspace/.github/workflows/checkmarx-one.yml:47:81: [warning] line too long (295 > 80 characters) (line-length)
+2024-04-11T15:34:38.5094840Z /github/workspace/.github/workflows/checkmarx-one.yml:48:81: [warning] line too long (303 > 80 characters) (line-length)
+2024-04-11T15:34:38.5095884Z /github/workspace/.github/workflows/checkmarx-one.yml:49:81: [warning] line too long (104 > 80 characters) (line-length)
+2024-04-11T15:34:38.5096539Z ------[0m
+2024-04-11T15:34:38.5361377Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.5396460Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/snyk-security.yml][0m
+2024-04-11T15:34:38.6283617Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[snyk-security.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.6321788Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.6322623Z ------
+2024-04-11T15:34:38.6323840Z /github/workspace/.github/workflows/snyk-security.yml:6:81: [warning] line too long (102 > 80 characters) (line-length)
+2024-04-11T15:34:38.6325835Z /github/workspace/.github/workflows/snyk-security.yml:19:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.6327843Z /github/workspace/.github/workflows/snyk-security.yml:23:24: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.6329924Z /github/workspace/.github/workflows/snyk-security.yml:34:81: [warning] line too long (92 > 80 characters) (line-length)
+2024-04-11T15:34:38.6332054Z /github/workspace/.github/workflows/snyk-security.yml:35:81: [warning] line too long (126 > 80 characters) (line-length)
+2024-04-11T15:34:38.6334306Z /github/workspace/.github/workflows/snyk-security.yml:44:81: [warning] line too long (116 > 80 characters) (line-length)
+2024-04-11T15:34:38.6336559Z /github/workspace/.github/workflows/snyk-security.yml:51:81: [warning] line too long (102 > 80 characters) (line-length)
+2024-04-11T15:34:38.6338663Z /github/workspace/.github/workflows/snyk-security.yml:63:81: [warning] line too long (85 > 80 characters) (line-length)
+2024-04-11T15:34:38.6339924Z /github/workspace/.github/workflows/snyk-security.yml:71:81: [warning] line too long (86 > 80 characters) (line-length)
+2024-04-11T15:34:38.6340582Z ------[0m
+2024-04-11T15:34:38.6629666Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.6665663Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/super-linter.yml][0m
+2024-04-11T15:34:38.7541275Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[super-linter.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.7578158Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.7578853Z ------
+2024-04-11T15:34:38.7579548Z /github/workspace/.github/workflows/super-linter.yml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.7581231Z /github/workspace/.github/workflows/super-linter.yml:5:16: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.7583150Z /github/workspace/.github/workflows/super-linter.yml:5:25: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.7584682Z /github/workspace/.github/workflows/super-linter.yml:7:16: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.7585729Z /github/workspace/.github/workflows/super-linter.yml:7:25: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.7586868Z /github/workspace/.github/workflows/super-linter.yml:40:81: [warning] line too long (110 > 80 characters) (line-length)
+2024-04-11T15:34:38.7588014Z /github/workspace/.github/workflows/super-linter.yml:60:81: [warning] line too long (100 > 80 characters) (line-length)
+2024-04-11T15:34:38.7589276Z /github/workspace/.github/workflows/super-linter.yml:125:1: [warning] too many blank lines (1 > 0) (empty-lines)
+2024-04-11T15:34:38.7589943Z ------[0m
+2024-04-11T15:34:38.7868694Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.7905159Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/.github/workflows/superlinter.yml][0m
+2024-04-11T15:34:38.8748692Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[superlinter.yml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.8787081Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.8787999Z ------
+2024-04-11T15:34:38.8789307Z /github/workspace/.github/workflows/superlinter.yml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.8791433Z /github/workspace/.github/workflows/superlinter.yml:5:16: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.8793498Z /github/workspace/.github/workflows/superlinter.yml:5:21: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.8794722Z /github/workspace/.github/workflows/superlinter.yml:7:16: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.8795918Z /github/workspace/.github/workflows/superlinter.yml:7:21: [warning] too many spaces inside brackets (brackets)
+2024-04-11T15:34:38.8796739Z ------[0m
+2024-04-11T15:34:38.9076443Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:38.9111963Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m   File:[/github/workspace/guestbook-controller.yaml][0m
+2024-04-11T15:34:38.9946629Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:38.9982841Z [0m2024-04-11 15:34:38 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:38.9983633Z ------
+2024-04-11T15:34:38.9984754Z /github/workspace/guestbook-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:38.9986320Z /github/workspace/guestbook-controller.yaml:17:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:38.9988357Z /github/workspace/guestbook-controller.yaml:20:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:38.9989595Z ------[0m
+2024-04-11T15:34:39.0271826Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.0307097Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/guestbook-service.yaml][0m
+2024-04-11T15:34:39.1144615Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.1180233Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.1181044Z ------
+2024-04-11T15:34:39.1182140Z /github/workspace/guestbook-service.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.1183742Z /github/workspace/guestbook-service.yaml:9:3: [warning] wrong indentation: expected 4 but found 2 (indentation)
+2024-04-11T15:34:39.1184492Z ------[0m
+2024-04-11T15:34:39.1466104Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.1502566Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-controller.yaml][0m
+2024-04-11T15:34:39.2354964Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[guestbook-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.2392697Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.2393527Z ------
+2024-04-11T15:34:39.2394849Z /github/workspace/k8s cluster configuration files/guestbook-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.2396475Z /github/workspace/k8s cluster configuration files/guestbook-controller.yaml:17:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.2398385Z /github/workspace/k8s cluster configuration files/guestbook-controller.yaml:20:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.2399826Z /github/workspace/k8s cluster configuration files/guestbook-controller.yaml:23:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:39.2400626Z ------[0m
+2024-04-11T15:34:39.2685768Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.2721702Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/guestbook-service.yaml][0m
+2024-04-11T15:34:39.3533940Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[guestbook-service.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.3570175Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.3571108Z ------
+2024-04-11T15:34:39.3572569Z /github/workspace/k8s cluster configuration files/guestbook-service.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.3575224Z /github/workspace/k8s cluster configuration files/guestbook-service.yaml:9:3: [warning] wrong indentation: expected 4 but found 2 (indentation)
+2024-04-11T15:34:39.3576700Z ------[0m
+2024-04-11T15:34:39.3863599Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.3900655Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-controller.yaml][0m
+2024-04-11T15:34:39.4734418Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.4772333Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.4772988Z ------
+2024-04-11T15:34:39.4773888Z /github/workspace/k8s cluster configuration files/redis-master-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.4776425Z /github/workspace/k8s cluster configuration files/redis-master-controller.yaml:20:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.4778912Z /github/workspace/k8s cluster configuration files/redis-master-controller.yaml:23:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.4780359Z /github/workspace/k8s cluster configuration files/redis-master-controller.yaml:26:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:39.4781441Z ------[0m
+2024-04-11T15:34:39.5065264Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.5101631Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-master-service.yaml][0m
+2024-04-11T15:34:39.5911928Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.5949044Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.5949839Z ------
+2024-04-11T15:34:39.5951082Z /github/workspace/k8s cluster configuration files/redis-master-service.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.5952690Z /github/workspace/k8s cluster configuration files/redis-master-service.yaml:10:3: [warning] wrong indentation: expected 4 but found 2 (indentation)
+2024-04-11T15:34:39.5953641Z ------[0m
+2024-04-11T15:34:39.6236080Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.6271465Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-replica-controller.yaml][0m
+2024-04-11T15:34:39.7111483Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.7151113Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.7151713Z ------
+2024-04-11T15:34:39.7153146Z /github/workspace/k8s cluster configuration files/redis-replica-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.7156265Z /github/workspace/k8s cluster configuration files/redis-replica-controller.yaml:20:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.7159077Z /github/workspace/k8s cluster configuration files/redis-replica-controller.yaml:23:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.7160921Z /github/workspace/k8s cluster configuration files/redis-replica-controller.yaml:26:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:39.7161969Z ------[0m
+2024-04-11T15:34:39.7444167Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.7480311Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/k8s cluster configuration files/redis-slave-svc.yaml][0m
+2024-04-11T15:34:39.8297623Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[redis-slave-svc.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.8333971Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.8334813Z ------
+2024-04-11T15:34:39.8336166Z /github/workspace/k8s cluster configuration files/redis-slave-svc.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.8337590Z ------[0m
+2024-04-11T15:34:39.8623820Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.8660845Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/redis-master-controller.yaml][0m
+2024-04-11T15:34:39.9504153Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m    - File:[0;37m[redis-master-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:39.9542847Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:39.9543661Z ------
+2024-04-11T15:34:39.9544390Z /github/workspace/redis-master-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:39.9545602Z /github/workspace/redis-master-controller.yaml:20:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:39.9546829Z /github/workspace/redis-master-controller.yaml:23:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:39.9547873Z ------[0m
+2024-04-11T15:34:39.9831506Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:39.9866650Z [0m2024-04-11 15:34:39 [0;34m[INFO][0m   File:[/github/workspace/redis-master-service.yaml][0m
+2024-04-11T15:34:40.0707551Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m    - File:[0;37m[redis-master-service.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:40.0743391Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:40.0744052Z ------
+2024-04-11T15:34:40.0745100Z /github/workspace/redis-master-service.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:40.0747395Z /github/workspace/redis-master-service.yaml:10:3: [warning] wrong indentation: expected 4 but found 2 (indentation)
+2024-04-11T15:34:40.0749093Z ------[0m
+2024-04-11T15:34:40.1034685Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:40.1072308Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-controller.yaml][0m
+2024-04-11T15:34:40.1900752Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m    - File:[0;37m[redis-replica-controller.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:40.1937549Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:40.1938228Z ------
+2024-04-11T15:34:40.1938921Z /github/workspace/redis-replica-controller.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:40.1940144Z /github/workspace/redis-replica-controller.yaml:20:7: [warning] wrong indentation: expected 8 but found 6 (indentation)
+2024-04-11T15:34:40.1941384Z /github/workspace/redis-replica-controller.yaml:23:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+2024-04-11T15:34:40.1942113Z ------[0m
+2024-04-11T15:34:40.2225108Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ---------------------------[0m
+2024-04-11T15:34:40.2260955Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   File:[/github/workspace/redis-replica-service.yaml][0m
+2024-04-11T15:34:40.3076362Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m    - File:[0;37m[redis-replica-service.yaml][0;34m was linted with [0;37m[yamllint][0;34m successfully[0m
+2024-04-11T15:34:40.3113673Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m      - Command output:[0m
+2024-04-11T15:34:40.3114496Z ------
+2024-04-11T15:34:40.3115602Z /github/workspace/redis-replica-service.yaml:1:1: [warning] missing document start "---" (document-start)
+2024-04-11T15:34:40.3116947Z /github/workspace/redis-replica-service.yaml:10:3: [warning] wrong indentation: expected 4 but found 2 (indentation)
+2024-04-11T15:34:40.3117614Z ------[0m
+2024-04-11T15:34:40.3187762Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:40.3224555Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:40.3260460Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   The script has completed[0m
+2024-04-11T15:34:40.3295839Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:40.3333294Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ----------------------------------------------[0m
+2024-04-11T15:34:40.3418107Z [0m2024-04-11 15:34:40 [0;31m[ERROR][0m   ERRORS FOUND[0m in CSS:[1][0m
+2024-04-11T15:34:40.7101445Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:40.7137917Z [0m2024-04-11 15:34:40 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:40.7176547Z [0m2024-04-11 15:34:40 [0;31m[ERROR][0m   ERRORS FOUND[0m in DOCKERFILE_HADOLINT:[1][0m
+2024-04-11T15:34:41.1420998Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:41.1456695Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:41.1497425Z [0m2024-04-11 15:34:41 [0;31m[ERROR][0m   ERRORS FOUND[0m in GITHUB_ACTIONS:[1][0m
+2024-04-11T15:34:41.5144747Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:41.5180812Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:41.8953129Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:41.8989375Z [0m2024-04-11 15:34:41 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:41.9030240Z [0m2024-04-11 15:34:41 [0;31m[ERROR][0m   ERRORS FOUND[0m in GO:[1][0m
+2024-04-11T15:34:42.2714970Z [0m2024-04-11 15:34:42 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:42.2749994Z [0m2024-04-11 15:34:42 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:42.6329286Z [0m2024-04-11 15:34:42 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:42.6365052Z [0m2024-04-11 15:34:42 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:43.0120387Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:43.0155401Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:43.0192007Z [0m2024-04-11 15:34:43 [0;31m[ERROR][0m   ERRORS FOUND[0m in JAVASCRIPT_STANDARD:[1][0m
+2024-04-11T15:34:43.4139497Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:43.4175080Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:43.7733925Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:43.7769366Z [0m2024-04-11 15:34:43 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:44.1629370Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:44.1664489Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:44.1708965Z [0m2024-04-11 15:34:44 [0;31m[ERROR][0m   ERRORS FOUND[0m in MARKDOWN:[1][0m
+2024-04-11T15:34:44.5325920Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:44.5361620Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:44.5398662Z [0m2024-04-11 15:34:44 [0;31m[ERROR][0m   ERRORS FOUND[0m in NATURAL_LANGUAGE:[1][0m
+2024-04-11T15:34:44.9382696Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:44.9419269Z [0m2024-04-11 15:34:44 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:45.4616124Z [0m2024-04-11 15:34:45 [0;34m[INFO][0m   ERROR! Failed to call GitHub Status API![0m
+2024-04-11T15:34:45.4654724Z [0m2024-04-11 15:34:45 [0;34m[INFO][0m   ERROR:[curl: (22) The requested URL returned error: 403][0m
+2024-04-11T15:34:45.4697638Z [0m2024-04-11 15:34:45 [41m[0;37m[FATAL][0m   Exiting with errors found![0m
+2024-04-11T15:34:45.6439486Z Post job cleanup.
+2024-04-11T15:34:45.7294747Z [command]/usr/bin/git version
+2024-04-11T15:34:45.7343923Z git version 2.43.2
+2024-04-11T15:34:45.7386578Z Temporarily overriding HOME='/home/runner/work/_temp/3a3b81de-2fa7-4c90-b7cc-64f8054b0b0a' before making global git config changes
+2024-04-11T15:34:45.7388402Z Adding repository directory to the temporary git global config as a safe directory
+2024-04-11T15:34:45.7393600Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/guestbook-go-azure/guestbook-go-azure
+2024-04-11T15:34:45.7435454Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-04-11T15:34:45.7474404Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-04-11T15:34:45.7727111Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-04-11T15:34:45.7755340Z http.https://github.com/.extraheader
+2024-04-11T15:34:45.7767279Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-04-11T15:34:45.7804024Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-04-11T15:34:45.8277324Z Cleaning up orphan processes
