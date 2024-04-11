@@ -35,6 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OUTPUT_FOLDER: public
           OUTPUT_DETAILS: detailed
+          GOROOT: ${{ steps.go.outputs.goroot }} # Explicitly set GOROOT
 
 # # This workflow executes several linters on changed files based on languages used in your code base whenever
 # # you push a code or open a pull request.
